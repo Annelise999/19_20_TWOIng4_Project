@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Cam.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import {
   PieChart, Pie, Cell,
 } from 'recharts';
@@ -36,14 +38,17 @@ class Cam extends Component{
       
       return (
         <div >
-        <PieChart width={400} height={400}>
+            <h3 class="suspect"> Suspects du moment...</h3>
+       
+     <Row>
+         <Col sm="5">  <PieChart width={400} height={400}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
+          cx={160}
+          cy={100}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={100}
           fill="#8884d8"
           dataKey="value"
         >
@@ -51,8 +56,18 @@ class Cam extends Component{
             data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
           }
         </Pie>
-      </PieChart>
-      <h1>Suspects du moment...</h1>
+      </PieChart> </Col>
+         
+    <Col sm="2"></Col>
+<Col sm="5"> 
+<br></br>
+    <Row><p class="suspect1"> Colonnel Moutarde</p> </Row>
+      <Row><p class="suspect2"> Professeur Violet</p></Row> 
+      <Row><p class="suspect3"> Mademoiselle Rose</p></Row>
+      <Row><p class="suspect4"> Madame Pervenche</p></Row>
+</Col>
+       
+      </Row>
         </div>
       );
   }
