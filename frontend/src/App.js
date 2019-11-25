@@ -9,7 +9,7 @@ import BarC from "./Component/BarC/BarC";
 import Cam from "./Component/Cam/Cam";
 import Perso from "./Component/Perso/Perso";
 import LineC from "./Component/LineC/LineC";
-
+import Horloge from "./Component/Horloge/Horloge";
 
 
 class App extends Component{
@@ -34,11 +34,19 @@ return (
    <button> Admin </button>
     </Col>
 </Row>
+<br></br>
+<Row>
+<Col sm= "1"></Col>
+<Horloge></Horloge>
+<Col sm= "4"></Col>
 
+</Row>
+
+<br></br>
 <Row><Galerie > </Galerie></Row>
 
 <Row> <BarC></BarC> </Row>
-<Row> <BarC></BarC> </Row>
+
 
 </Col>
 
@@ -48,7 +56,7 @@ return (
 <Row><BarC></BarC></Row>
 <Row><LineC></LineC></Row>
 <Row><Cam></Cam></Row>
-<Row><BarC></BarC></Row>
+
 
 
 </Col>
