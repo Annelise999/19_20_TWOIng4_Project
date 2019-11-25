@@ -13,7 +13,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 class Galerie extends Component{
     render () {
 
-
         const images = [
             {
                 original: camera1,
