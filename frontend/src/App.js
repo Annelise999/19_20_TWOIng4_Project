@@ -10,6 +10,10 @@ import Cam from "./Component/Cam/Cam";
 import Perso from "./Component/Perso/Perso";
 import LineC from "./Component/LineC/LineC";
 import Horloge from "./Component/Horloge/Horloge";
+import BarCform from './Component formulaire/BarC form/BarCform';
+import Camform from './Component formulaire/Cam form/Camform';
+import Linecform from './Component formulaire/LineC form/Linecform';
+import Bouton from './Component/Bouton/Bouton';
 
 
 class App extends Component{
@@ -31,7 +35,11 @@ return (
   </Col> 
   <Col sm="2"> 
   <p> </p> 
-   <button> Admin </button>
+   <Bouton></Bouton>
+  
+
+
+
     </Col>
 </Row>
 <br></br>
@@ -56,7 +64,9 @@ return (
 <Row><BarC></BarC></Row>
 <Row><LineC></LineC></Row>
 <Row><Cam></Cam></Row>
-
+<Row><BarCform></BarCform></Row>
+<Row><Camform></Camform></Row>
+<Row><Linecform></Linecform></Row>
 
 
 </Col>
