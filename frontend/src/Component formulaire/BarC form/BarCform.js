@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./BarCform.css"
 
 class BarCform extends Component {
     
@@ -33,19 +34,20 @@ class BarCform extends Component {
                     
                     <form onSubmit={this.handleSubmit}>
                     <label>
-                    Name:
+                    Name:   
                     <input type="text" value={this.state.Name} onChange={this.handleChange} />
                     </label>
                     <label>
-                    Enquetes resolues:
+                    Enquetes resolues:   
                     <input type="number" value={this.state.Enquetes_resol} onChange={this.handleChange} />
                     </label>
                     <label>
-                    Argent gagné:
+                    Argent gagné:   
                     <input type="number" value={this.state.arg_gagne} onChange={this.handleChange} />
                     </label>
-
+                    
                     <input type="submit" value="Submit" />
+                    
                     </form>
             </div>
         );

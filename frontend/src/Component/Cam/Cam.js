@@ -41,7 +41,7 @@ class Cam extends Component{
             <h3 class="suspect"> Suspects du moment...</h3>
        
      <Row>
-         <Col sm="5">  <PieChart width={400} height={400}>
+         <Col sm="5">  <PieChart width={400} height={250}>
         <Pie
           data={data}
           cx={160}
