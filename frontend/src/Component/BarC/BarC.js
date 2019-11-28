@@ -36,7 +36,7 @@ class BarC extends Component{
         <div class= "chart" >
       <BarChart 
   className="barchart"
-  width={500}
+  width={400}
   height={300}
   data={data}
   margin={{
