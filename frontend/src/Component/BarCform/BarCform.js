@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./BarCform.css"
 
+
 class BarCform extends Component {
     
     constructor(props) {
@@ -28,7 +29,7 @@ class BarCform extends Component {
 
     render() {
         return (
-            <div className="formBarc">
+            <div className="formBarc camembert">
                     
                     <h3>Formulaire pour BarC</h3>
                     

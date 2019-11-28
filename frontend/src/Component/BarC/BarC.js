@@ -33,7 +33,7 @@ class BarC extends Component{
           
           
       return (
-        <div >
+        <div class= "chart" >
       <BarChart 
   className="barchart"
   width={400}

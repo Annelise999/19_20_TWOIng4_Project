@@ -38,10 +38,10 @@ class Cam extends Component{
       
       return (
         <div >
-            <h3 class="suspect"> Suspects du moment...</h3>
+            <h4 class="suspect"> Suspects du moment...</h4>
        
      <Row>
-         <Col sm="5">  <PieChart width={400} height={250}>
+         <Col sm="5">  <PieChart class= "camembert" width={400} height={400}>
         <Pie
           data={data}
           cx={160}
@@ -61,7 +61,7 @@ class Cam extends Component{
     <Col sm="2"></Col>
 <Col sm="5"> 
 <br></br>
-    <Row><p class="suspect1"> Colonnel Moutarde</p> </Row>
+      <Row><p class="suspect1"> Colonnel Moutarde</p> </Row>
       <Row><p class="suspect2"> Professeur Violet</p></Row> 
       <Row><p class="suspect3"> Mademoiselle Rose</p></Row>
       <Row><p class="suspect4"> Madame Pervenche</p></Row>

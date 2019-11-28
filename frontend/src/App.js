@@ -1,19 +1,9 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
 
 import './App.css';
-//import Gallery from "./Component/Gallery/Gallery";
-import Galerie from "./Component/Galerie/Galerie";
-import BarC from "./Component/BarC/BarC";
-import Cam from "./Component/Cam/Cam";
-import Perso from "./Component/Perso/Perso";
-import LineC from "./Component/LineC/LineC";
-import Horloge from "./Component/Horloge/Horloge";
-import BarCform from './Component formulaire/BarC form/BarCform';
-import Camform from './Component formulaire/Cam form/Camform';
-import Linecform from './Component formulaire/LineC form/Linecform';
-import Bouton from './Component/Bouton/Bouton';
+import Dashboard from './Dashboard';
+import Formulaire from './Formulaire';
 
 
 class App extends Component{
@@ -22,58 +12,8 @@ class App extends Component{
       
 return (
 <div class= "dashboard">
-  <Container>
-
-   <Row>
-    <Col sm=  "6">
-
-<Row>
-
-  <Col sm="10">
-    <Perso> </Perso>
-    <p> Salut c'est moi je suis Anne-Lise</p>
-  </Col> 
-  <Col sm="2"> 
-  <p> </p> 
-   <Bouton></Bouton>
-  
-
-
-
-    </Col>
-</Row>
-<br></br>
-<Row>
-<Col sm= "1"></Col>
-<Horloge></Horloge>
-<Col sm= "4"></Col>
-
-</Row>
-
-<br></br>
-<Row><Galerie > </Galerie></Row>
-
-<Row> <BarC></BarC> </Row>
-
-
-</Col>
-
-<Col sm=  "6">
-
-
-<Row><BarC></BarC></Row>
-<Row><LineC></LineC></Row>
-<Row><Cam></Cam></Row>
-<Row><BarCform></BarCform></Row>
-<Row><Camform></Camform></Row>
-<Row><Linecform></Linecform></Row>
-
-
-</Col>
-
-</Row>
-
-</Container>
+ 
+  <Formulaire> </Formulaire>
 </div>
 
 );
