@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
-class Linecform extends Component {
 
+class BarCform extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             Name: '',
-            Salaire:'',
-            amt:''
+            Enquetes_resol:'',
+            arg_gagne:''
     
     
     };
@@ -17,20 +18,19 @@ class Linecform extends Component {
     }
 
     handleChange(event) {
-        this.setState({Name: event.target.Name , Enquetes_resol:event.target.Salaire, arg_gagne:event.target.amt});
+        this.setState({Name: event.target.Name , Enquetes_resol:event.target.Enquetes_resol, arg_gagne:event.target.arg_gagne});
       }
     
       handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte pour ' + this.state.Name);
+        alert('Les informations ont bien été prises en compte' + this.state.value);
         event.preventDefault();
       }
 
-
-
     render() {
         return (
-            <div>
-                 <h3>Formulaire pour LineC</h3>
+            <div className="formBarc camembert">
+                    
+                    <h3>Formulaire pour BarC</h3>
                     
                     <form onSubmit={this.handleSubmit}>
                     <label>
@@ -38,7 +38,7 @@ class Linecform extends Component {
                     <input type="text" value={this.state.Name} onChange={this.handleChange} />
                     </label>
                     <label>
-                    Salaire:
+                    Enquetes resolues:
                     <input type="number" value={this.state.Enquetes_resol} onChange={this.handleChange} />
                     </label>
                     <label>
@@ -53,4 +53,4 @@ class Linecform extends Component {
     }
 }
 
-export default Linecform;
+export default BarCform;

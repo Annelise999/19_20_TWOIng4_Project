@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 
-class BarCform extends Component {
-    
+class Linecform extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             Name: '',
-            Enquetes_resol:'',
-            arg_gagne:''
+            Salaire:'',
+            amt:''
     
     
     };
@@ -17,19 +17,20 @@ class BarCform extends Component {
     }
 
     handleChange(event) {
-        this.setState({Name: event.target.Name , Enquetes_resol:event.target.Enquetes_resol, arg_gagne:event.target.arg_gagne});
+        this.setState({Name: event.target.Name , Enquetes_resol:event.target.Salaire, arg_gagne:event.target.amt});
       }
     
       handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte' + this.state.value);
+        alert('Les informations ont bien été prises en compte pour ' + this.state.Name);
         event.preventDefault();
       }
 
+
+
     render() {
         return (
-            <div className="formBarc">
-                    
-                    <h3>Formulaire pour BarC</h3>
+            <div>
+                 <h3>Formulaire pour LineC</h3>
                     
                     <form onSubmit={this.handleSubmit}>
                     <label>
@@ -37,7 +38,7 @@ class BarCform extends Component {
                     <input type="text" value={this.state.Name} onChange={this.handleChange} />
                     </label>
                     <label>
-                    Enquetes resolues:
+                    Salaire:
                     <input type="number" value={this.state.Enquetes_resol} onChange={this.handleChange} />
                     </label>
                     <label>
@@ -52,4 +53,4 @@ class BarCform extends Component {
     }
 }
 
-export default BarCform;
+export default Linecform;
