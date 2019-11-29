@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import Galerie from "./Component/Galerie/Galerie";
-import BarC from "./Component/BarC/BarC";
-import Cam from "./Component/Cam/Cam";
-import Perso from "./Component/Perso/Perso";
-import LineC from "./Component/LineC/LineC";
-import Horloge from "./Component/Horloge/Horloge";
-import Bouton from './Component/Bouton/Bouton';
+import Galerie from "../Component/Galerie/Galerie";
+import BarC from "../Component/BarC/BarC";
+import Cam from "../Component/Cam/Cam";
+import Perso from "../Component/Perso/Perso";
+import LineC from "../Component/LineC/LineC";
+import Horloge from "../Component/Horloge/Horloge";
+import Bouton from '../Component/Bouton/Bouton';
 
 
 
