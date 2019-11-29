@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
+
+
 import { Container, Row, Col } from 'react-bootstrap';
 import Galerie from "../Component/Galerie/Galerie";
 import BarC from "../Component/BarC/BarC";
@@ -16,11 +19,11 @@ class Dashboard extends Component{
       
 return (
 <div class= "dashboard">
-  <Container>
+  <Container className="Container">
 
- <Row>
+ 
   
-    <Col sm=  "6">
+    
 
 <Row>
   <Col sm="10">
@@ -34,7 +37,13 @@ return (
 </Row>
 
 
+
+<Row>
+  
+<Col sm=  "6">
+
 <br></br>
+
 <Row>
 <Col sm= "1"></Col>
 <Horloge></Horloge>
@@ -46,6 +55,7 @@ return (
 <br></br>
 <Row><Galerie > </Galerie></Row>
 
+</Col>
 
 
 

@@ -37,11 +37,13 @@ class Cam extends Component{
           render () {
       
       return (
-        <div >
+       
+       <div className="Camembert" >
+
             <h4 class="suspect"> Suspects du moment...</h4>
        
      <Row>
-         <Col sm="5">  <PieChart class= "camembert" width={400} height={400}>
+         <Col sm="5">  <PieChart class= "camembert" width={400} height={250}>
         <Pie
           data={data}
           cx={160}

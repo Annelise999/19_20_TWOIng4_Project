@@ -18,7 +18,7 @@ class Formulaire extends Component{
       
 return (
 <div class= "dashboard">
-  <Container>
+<Container className="Container">
 
  
   

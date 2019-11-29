@@ -10,6 +10,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 
 class App extends Component{
@@ -17,8 +19,13 @@ class App extends Component{
 
     
   return (
-    <Router>
+   
+   <Router>
       <div>
+        <Row>
+          
+          <Col sm="1" style={{padding:0}}>
+            <div className="Menu" >
         <nav>
           <ul>
             <li>
@@ -29,7 +36,9 @@ class App extends Component{
             </li>
           </ul>
         </nav>
-
+        </div>
+        </Col>
+        <Col sm="11"style={{padding:0}}>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -40,8 +49,13 @@ class App extends Component{
             <Home />
           </Route>
         </Switch>
+      </Col>
+      
+      </Row>
       </div>
     </Router>
+    
+    
   );
 }
 

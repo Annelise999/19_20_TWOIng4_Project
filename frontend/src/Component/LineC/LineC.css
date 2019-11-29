@@ -1,0 +1,12 @@
+.LineChart{
+    background-color: #282c34;
+    color: white;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    font-family: Arial;
+    margin-left: auto;
+
+    text-align: center;
+    box-shadow: 10px 10px 8px 10px #30343d;
+    transition:all 0.3s ease;
+}

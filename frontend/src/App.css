@@ -21,6 +21,20 @@
   color: #09d3ac;
 }
 
+.Menu{
+  height: 100%;
+  background-color: #282c34;
+  color: white;
+
+  font-family: Arial;
+
+}
+.Container{
+  background-color: #a3b8e0;
+  padding: 3em;
+  max-width: 100%;
+}
+
 .camembert {
   border: black solid 1px !important;
 
@@ -51,3 +65,5 @@
   text-align: center;
   margin-bottom: 1rem;
 }
+
+

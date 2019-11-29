@@ -36,8 +36,8 @@ class BarC extends Component{
         <div class= "chart" >
       <BarChart 
   className="barchart"
-  width={400}
-  height={300}
+  width={300}
+  height={240}
   data={data}
   margin={{
     top: 5, right: 30, left: 20, bottom: 5,
@@ -48,7 +48,7 @@ class BarC extends Component{
   <YAxis />
   <Tooltip />
   <Legend />
-  <Bar dataKey="Enquetes_resolues" fill="#8884d8" />
+  <Bar className="legende" dataKey="Enquetes_resolues" fill="#8884d8" font="12" />
   
 </BarChart>
         </div>
