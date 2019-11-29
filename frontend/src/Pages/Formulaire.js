@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "../App.css"
 
 import { Container, Row, Col } from 'react-bootstrap';
-import BarCform from "./Component/BarCform/BarCform";
-import Camform from "./Component/Camform/Camform";
-import Perso from "./Component/Perso/Perso";
-import LineCform from "./Component/Linecform/Linecform";
-import Bouton from './Component/Bouton/Bouton';
-import Galerieform from './Component/Galerieform/Galerieform';
-import Thermoform from './Component/Thermoform/Thermoform';
+import BarCform from "../Component/BarCform/BarCform";
+import Camform from "../Component/Camform/Camform";
+import Perso from "../Component/Perso/Perso";
+import LineCform from "../Component/Linecform/Linecform";
+import Bouton from '../Component/Bouton/Bouton';
+import Galerieform from '../Component/Galerieform/Galerieform';
+import Thermoform from '../Component/Thermoform/Thermoform';
 
 
 
