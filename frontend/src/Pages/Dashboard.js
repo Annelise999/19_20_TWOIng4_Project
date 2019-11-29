@@ -48,7 +48,6 @@ return (
 
 
 
-</Col>
 
 <Col sm=  "1"></Col>
 
