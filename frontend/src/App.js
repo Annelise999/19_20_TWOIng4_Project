@@ -11,13 +11,13 @@ class App extends Component{
 
       
 return (
-<div class= "dashboard">
+<div className= "dashboard">
  
   <Formulaire> </Formulaire>
 </div>
 
 );
-     
+
   }
   
 }

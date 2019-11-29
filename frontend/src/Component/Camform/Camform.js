@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../../App.css";
 
 
 class Camform extends Component {
@@ -27,7 +28,7 @@ class Camform extends Component {
 
     render() {
         return (
-            <div className="Camform">
+            <div className="Formulaire">
                 
                 <h3>Formulaire pour Cam</h3>
                 

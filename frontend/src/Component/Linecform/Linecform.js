@@ -1,4 +1,5 @@
-import React, { Component } from './node_modules/react';
+import React, { Component } from 'react';
+import "../../App.css";
 
 class Linecform extends Component {
 
@@ -29,7 +30,7 @@ class Linecform extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Formulaire">
                  <h3>Formulaire pour LineC</h3>
                     
                     <form onSubmit={this.handleSubmit}>

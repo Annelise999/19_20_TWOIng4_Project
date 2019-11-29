@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./BarCform.css"
+import "../../App.css";
 
 
 class BarCform extends Component {
@@ -29,7 +29,7 @@ class BarCform extends Component {
 
     render() {
         return (
-            <div className="formBarc camembert">
+            <div className="Formulaire">
                     
                     <h3>Formulaire pour BarC</h3>
                     

@@ -25,3 +25,29 @@
   border: black solid 1px !important;
 
 }
+
+.Formulaire{
+    
+  background-color: #282c34;
+  color: white;
+  padding: 40px;
+  font-family: Arial;
+  margin: 3em;
+  text-align: center;
+  box-shadow: 10px 10px 8px 10px #30343d;
+  transition:all 0.3s ease;
+  
+  }
+
+.Formulaire:hover{
+
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+} 
+  
+
+.Formulaire > h3{
+  text-align: center;
+  margin-bottom: 1rem;
+}
