@@ -7,7 +7,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,15 +22,18 @@
 }
 
 .Menu{
-  height: 100%;
+  
+  height: 100%; 
   background-color: #282c34;
   color: white;
-
+  
   font-family: Arial;
+ 
+  
 
 }
 .Container{
-  background-color: #a3b8e0;
+  background-color: lavenderblush;
   padding: 3em;
   max-width: 100%;
 }

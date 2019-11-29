@@ -7,9 +7,17 @@
   color: white;
     padding-top: 1em;
     padding-bottom: 1em;
+    margin-bottom: 1em;
   font-family: Arial;
  
   text-align: center;
   box-shadow: 10px 10px 8px 10px #30343d;
   transition:all 0.3s ease;
 }
+
+.barchart:hover{
+
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  } 

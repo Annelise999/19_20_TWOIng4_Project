@@ -6,8 +6,8 @@ class Horloge extends Component {
     render() {
 
         return (
-            <div class= "heure">
-                <h2 class="h"> HEURE </h2>
+            <div className= "heure">
+                <p> HEURE </p>
         <Clock format={'HH:mm:ss'} ticking={true} timezone={'FR'} />
             </div>
         );

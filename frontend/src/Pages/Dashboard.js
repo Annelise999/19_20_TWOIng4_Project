@@ -30,7 +30,7 @@ return (
     <Perso> </Perso>
     <p> Salut c'est moi je suis Anne-Lise</p>
   </Col> 
-  <Col sm="2"> 
+  <Col sm="1"> 
   <p> </p> 
    <Bouton></Bouton> 
     </Col>
@@ -40,7 +40,7 @@ return (
 
 <Row>
   
-<Col sm=  "6">
+<Col sm=  "6" >
 
 <br></br>
 
@@ -54,6 +54,7 @@ return (
 
 <br></br>
 <Row><Galerie > </Galerie></Row>
+<Row><Cam></Cam></Row>
 
 </Col>
 
@@ -61,12 +62,12 @@ return (
 
 <Col sm=  "1"></Col>
 
-<Col sm=  "5">
+<Col sm=  "5" >
 
 <Row><BarC></BarC></Row>
 <Row><br></br></Row>
 <Row><LineC></LineC></Row>
-<Row><Cam></Cam></Row>
+
 
 
 

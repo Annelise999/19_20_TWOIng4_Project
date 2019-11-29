@@ -58,7 +58,7 @@ export default class LineC extends Component {
   render() {
     return (
       <LineChart className="LineChart"
-        width={290}
+        width={450}
         height={260}
         data={data}
         margin={{
