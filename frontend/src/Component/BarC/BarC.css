@@ -2,12 +2,12 @@
     margin-top: 100px;
 }
 
-.barchart{
+.chart{
     background-color: #282c34;
-  color: white;
+    color: white;
     padding-top: 1em;
     padding-bottom: 1em;
-    margin-bottom: 1em;
+    margin: auto;
   font-family: Arial;
  
   text-align: center;
@@ -15,7 +15,7 @@
   transition:all 0.3s ease;
 }
 
-.barchart:hover{
+.chart:hover{
 
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);

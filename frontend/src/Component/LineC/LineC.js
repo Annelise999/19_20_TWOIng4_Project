@@ -57,7 +57,8 @@ export default class LineC extends Component {
   
   render() {
     return (
-      <LineChart className="LineChart"
+      <div className="LineChart">
+      <LineChart 
         width={450}
         height={260}
         data={data}
@@ -73,6 +74,7 @@ export default class LineC extends Component {
         <Line type="monotone" dataKey="salary" stroke="#3384d8" label={<CustomizedLabel />} />
     
       </LineChart>
+      </div>
     );
   }
 }

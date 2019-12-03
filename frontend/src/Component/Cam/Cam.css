@@ -1,11 +1,12 @@
 .suspect {
     text-align: center;
     color: 00C49F;
+    font-weight:bold;
    
 }
 
 .suspect1{
-    padding-right:0;
+    text-align: center;
     color: #0088FE;
 }
 

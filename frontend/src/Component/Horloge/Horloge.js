@@ -8,7 +8,7 @@ class Horloge extends Component {
         return (
             <div className= "heure">
                 <p> HEURE </p>
-        <Clock format={'HH:mm:ss'} ticking={true} timezone={'FR'} />
+        <Clock className = "heuree" format={'HH:mm:ss'} ticking={true} timezone={'FR'} />
             </div>
         );
     }

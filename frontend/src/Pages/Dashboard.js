@@ -40,19 +40,11 @@ return (
 
 <Row>
   
-<Col sm=  "6" >
+<Col md = "6" sm=  "12" xs="12" >
 
 <br></br>
 
-<Row>
-<Col sm= "1"></Col>
-<Horloge></Horloge>
-<Col sm= "2"></Col>
-<Col sm= "2"></Col>
-
-</Row>
-
-<br></br>
+<Row><Horloge></Horloge></Row>
 <Row><Galerie > </Galerie></Row>
 <Row><Cam></Cam></Row>
 
@@ -60,9 +52,9 @@ return (
 
 
 
-<Col sm=  "1"></Col>
+<Col md= "1" sm=  "1" xs= "1"></Col>
 
-<Col sm=  "5" >
+<Col md= "5" sm=  "12" xs= "12">
 
 <Row><BarC></BarC></Row>
 <Row><br></br></Row>
