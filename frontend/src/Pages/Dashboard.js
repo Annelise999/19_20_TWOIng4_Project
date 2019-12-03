@@ -25,22 +25,10 @@ return (
 
  
 <Row>
-  <Col sm="10">
-    <Perso> </Perso>
-  </Col>
-  <Col sm="1"> 
-   <Bouton></Bouton> 
-    </Col>
-</Row>
-
-
-
-<Row>
   
 <Col md = "6" sm=  "12" xs="12" >
 
 <br></br>
-
 
 <Row><Horloge></Horloge></Row>
 <Row><Galerie > </Galerie></Row>

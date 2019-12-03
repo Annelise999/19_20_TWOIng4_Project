@@ -71,4 +71,17 @@
   margin-bottom: 1rem;
 }
 
+.Hautdepage{
+  background-color: #282c34;
+  color: white;
+  font-family: Arial;
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  
+  box-shadow:  #444a58;
+}
 
+.Hautdepage > img{
+  margin-left: 1em;
+}
