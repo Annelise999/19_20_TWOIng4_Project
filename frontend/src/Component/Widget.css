@@ -1,0 +1,68 @@
+.widget{
+    background-color: #282c34;
+    color: white;
+    padding: 1em;
+    font-family: Arial;
+    margin: auto;
+    margin-top:1em;
+    margin-bottom:1em;
+    text-align: center;
+    box-shadow: 10px 10px 8px 10px #30343d;
+    transition:all 0.3s ease;
+  }
+  
+  .widget:hover{
+  
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  } 
+
+  .suspect {
+    text-align: center;
+    color: 00C49F;
+    font-weight:bold;
+   
+}
+
+.suspect1{
+    text-align: center;
+    color: #0088FE;
+}
+
+.suspect2{
+    text-align: center;
+    color: #00C49F;
+}
+
+.suspect3{
+    text-align: center;
+    color: #FFBB28;
+}
+
+.suspect4{
+    text-align: center;
+    color: #FF8042;
+}
+
+
+.heure{
+
+    font-size: 25px;
+    font-weight: bold;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    
+    .heuree{
+        border-width:1px;
+     border-style:outset;
+     border-color: white;
+     padding: 4px;
+    }
+    
+    
+    
+

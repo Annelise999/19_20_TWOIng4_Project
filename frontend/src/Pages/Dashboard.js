@@ -8,9 +8,11 @@ import Galerie from "../Component/Galerie/Galerie";
 import BarC from "../Component/BarC/BarC";
 import Cam from "../Component/Cam/Cam";
 import Perso from "../Component/Perso/Perso";
-import LineC from "../Component/LineC/LineC";
 import Horloge from "../Component/Horloge/Horloge";
 import Bouton from '../Component/Bouton/Bouton';
+import LineChart from '../Component/LineChart/LineChart';
+import Counter from '../Component/Counter/Counter';
+import Thermo from '../Component/Thermo/Thermo';
 
 
 
@@ -22,7 +24,6 @@ return (
   <Container className="Container">
 
  
-  
 <Row>
   
 <Col md = "6" sm=  "12" xs="12" >
@@ -42,10 +43,9 @@ return (
 <Col md= "5" sm=  "12" xs= "12">
 
 <Row><BarC></BarC></Row>
-<Row><br></br></Row>
-<Row><LineC></LineC></Row>
-
-
+<Row><LineChart></LineChart></Row>
+<Row><Counter></Counter></Row>
+<Row><Thermo></Thermo></Row>
 
 
 </Col>

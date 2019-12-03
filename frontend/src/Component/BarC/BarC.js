@@ -1,63 +1,61 @@
 import React, { Component } from 'react';
-import './BarC.css';
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  } from 'recharts';
+  ResponsiveContainer, ComposedChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+} from 'recharts';
+import '../Widget.css';
 
-class BarC extends Component{
-    render () {
 
+class Charte extends Component {
+
+    render() {
         const data = [
             {
-              name: 'Mai', Enquetes_resolues: 12, amt: 2400,
+              name: 'Mai', Enquêtes: 12, 
             },
             {
-              name: 'Juin', Enquetes_resolues: 13, amt: 2210,
+              name: 'Juin', Enquêtes: 13, 
             },
             {
-              name: 'Juil', Enquetes_resolues: 98, amt: 2290,
+              name: 'Juil', Enquêtes: 98, 
             },
             {
-              name: 'Aou', Enquetes_resolues: 39, amt: 2000,
+              name: 'Aou', Enquêtes: 39, 
             },
             {
-              name: 'Sep', Enquetes_resolues: 48, amt: 2181,
+              name: 'Sep', Enquêtes: 48, 
             },
             {
-              name: 'Oct', Enquetes_resolues: 38, amt: 2500,
+              name: 'Oct', Enquêtes: 38, 
             },
             {
-              name: 'Nov', Enquetes_resolues: 43, amt: 2100,
+              name: 'Nov', Enquêtes: 43, 
             },
           ];
-          
-          
-      return (
-        <div class= "chart" >
-      <BarChart 
-  className="barchart"
-  width={450}
-  height={400}
-  data={data}
-  margin={{
-    top: 5, right: 30, left: 20, bottom: 5,
-  }}
->
-  <CartesianGrid strokeDasharray="3 3" />
-  <XAxis dataKey="name" />
-  <YAxis />
-  <Tooltip />
-  <Legend />
-  <Bar className="legende" dataKey="Enquetes_resolues" fill="#8884d8" font="12" />
-  
-</BarChart>
-        </div>
-      );
+
+
+
+    return (
+      <div className= "widget" style={{ width: '100%', height: 300 }}>
+        <ResponsiveContainer>
+          <ComposedChart
+            width={500}
+            height={400}
+            data={data}
+            margin={{
+              top: 20, right: 20, bottom: 20, left: 20,
+            }}
+          >
+            <CartesianGrid stroke="#f5f5f5" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="Enquêtes" barSize={20} fill="#413ea0" />           
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+    );
   }
-
-
 }
 
-export default BarC;
-
-
+export default Charte;

@@ -1,15 +1,17 @@
 import React, { Component }  from 'react';
 import Thermometer from 'react-thermometer';
 import "./Thermo.css";
+import '../Widget.css';
+
  
 class Thermo extends Component {
     render() {
 
         return (
            
-<div>
+<div className= "widget">
     <h2>TEMPERATURE</h2>
-<Thermometer
+<Thermometer 
         min={0}
         max={30}
         width={10}

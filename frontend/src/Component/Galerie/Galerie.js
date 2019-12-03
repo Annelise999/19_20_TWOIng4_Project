@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import camera1 from './camera1.jpg';
 import camera2 from './camera2.jpg';
 import camera3 from './camera3.jpg';
-import './Galerie.css';
+import '../Widget.css';
 
 import ImageGallery from 'react-image-gallery';
 
@@ -31,7 +31,7 @@ class Galerie extends Component{
            
           
       return (
-        <div class= "galerie">
+        <div class= "widget">
         <ImageGallery  items={images} />
         </div>
       );
