@@ -8,9 +8,11 @@ import Galerie from "../Component/Galerie/Galerie";
 import BarC from "../Component/BarC/BarC";
 import Cam from "../Component/Cam/Cam";
 import Perso from "../Component/Perso/Perso";
-import LineC from "../Component/LineC/LineC";
 import Horloge from "../Component/Horloge/Horloge";
 import Bouton from '../Component/Bouton/Bouton';
+import LineChart from '../Component/LineChart/LineChart';
+import Counter from '../Component/Counter/Counter';
+import Thermo from '../Component/Thermo/Thermo';
 
 
 
@@ -26,15 +28,10 @@ return (
     
 
 <Row>
-  <Col sm="6">
+  <Col sm="10">
     <Perso> </Perso>
-    <p> Salut c'est moi je suis Anne-Lise</p>
-  </Col>
-  <Col sm="4">
-    <Horloge></Horloge>
   </Col>
   <Col sm="1"> 
-  <p> </p> 
    <Bouton></Bouton> 
     </Col>
 </Row>
@@ -47,13 +44,8 @@ return (
 
 <br></br>
 
-<<<<<<< HEAD
+
 <Row><Horloge></Horloge></Row>
-=======
-
-
-<br></br>
->>>>>>> 3272fcf671c022aa6003e8b96a5bb7841329b9b7
 <Row><Galerie > </Galerie></Row>
 <Row><Cam></Cam></Row>
 
@@ -66,10 +58,9 @@ return (
 <Col md= "5" sm=  "12" xs= "12">
 
 <Row><BarC></BarC></Row>
-<Row><br></br></Row>
-<Row><LineC></LineC></Row>
-
-
+<Row><LineChart></LineChart></Row>
+<Row><Counter></Counter></Row>
+<Row><Thermo></Thermo></Row>
 
 
 </Col>

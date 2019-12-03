@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Cam.css';
+import '../Widget.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
 import {
@@ -38,7 +38,7 @@ class Cam extends Component{
       
       return (
        
-       <div className="Camembert" >
+       <div className="widget" >
 
             <h4 class="suspect"> SUSPECTS DU MOMENT</h4>
        
