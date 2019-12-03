@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  ResponsiveContainer, ComposedChart, Area, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import '../Widget.css';
 
@@ -35,7 +35,7 @@ class LineChart extends Component {
       
 
     return (
-      <div className= "widget" style={{ width: '100%', height: 300 }}>
+      <div className= "widget droite" style={{ width: '100%', height: 300 }}>
       <ResponsiveContainer>
         <ComposedChart
           width={500}

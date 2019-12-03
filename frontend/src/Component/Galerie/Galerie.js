@@ -31,7 +31,7 @@ class Galerie extends Component{
            
           
       return (
-        <div class= "widget">
+        <div class= "widget ">
         <ImageGallery  items={images} />
         </div>
       );

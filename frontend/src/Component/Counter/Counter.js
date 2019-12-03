@@ -5,16 +5,12 @@ class Counter extends Component {
     
     render() {
 
-    const data = 
-        {
-          number: 8
-        }
-      ;
+
 
     
         return (
-            <div className= "widget">
-                <h4>Vous avez:</h4> 
+            <div className= "widget droite">
+                <h4>Vous avez</h4> 
                 <h2> 9 </h2>
                 <h4>capteurs fonctionnels</h4> 
             </div>

@@ -35,7 +35,7 @@ class Charte extends Component {
 
 
     return (
-      <div className= "widget" style={{ width: '100%', height: 300 }}>
+      <div className= "widget droite" style={{ width: '100%', height: 300 }}>
         <ResponsiveContainer>
           <ComposedChart
             width={500}

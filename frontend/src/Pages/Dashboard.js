@@ -24,9 +24,6 @@ return (
   <Container className="Container">
 
  
-  
-    
-
 <Row>
   <Col sm="10">
     <Perso> </Perso>
@@ -59,9 +56,11 @@ return (
 
 <Row><BarC></BarC></Row>
 <Row><LineChart></LineChart></Row>
-<Row><Counter></Counter></Row>
-<Row><Thermo></Thermo></Row>
-
+<Row>
+<Col lg="12"> <Thermo></Thermo> </Col>  
+  
+  <Col lg= "12"> <Counter></Counter> </Col>
+  </Row>
 
 </Col>
 
