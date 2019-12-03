@@ -26,10 +26,13 @@ return (
     
 
 <Row>
-  <Col sm="10">
+  <Col sm="6">
     <Perso> </Perso>
     <p> Salut c'est moi je suis Anne-Lise</p>
-  </Col> 
+  </Col>
+  <Col sm="4">
+    <Horloge></Horloge>
+  </Col>
   <Col sm="1"> 
   <p> </p> 
    <Bouton></Bouton> 
@@ -44,7 +47,13 @@ return (
 
 <br></br>
 
+<<<<<<< HEAD
 <Row><Horloge></Horloge></Row>
+=======
+
+
+<br></br>
+>>>>>>> 3272fcf671c022aa6003e8b96a5bb7841329b9b7
 <Row><Galerie > </Galerie></Row>
 <Row><Cam></Cam></Row>
 

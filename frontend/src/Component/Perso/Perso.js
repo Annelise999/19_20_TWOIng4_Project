@@ -10,10 +10,15 @@ class Perso extends Component{
           render () {
       
       return (
-        <div >
-        <img class="roundedImage" src= {image1} alt="photo de moi"/> 
-        <h1> MOTHER OF DRAGONS</h1>
-        </div>
+        <div className="Profil" >
+         
+        <img class="roundedImage" src= {image1} alt="photo de moi"/>
+    
+    
+      <h2> MOTHER OF DRAGONS</h2>
+      
+     
+      </div>
       );
   }
 
