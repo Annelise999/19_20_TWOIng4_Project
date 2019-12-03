@@ -26,10 +26,13 @@ return (
     
 
 <Row>
-  <Col sm="10">
+  <Col sm="6">
     <Perso> </Perso>
     <p> Salut c'est moi je suis Anne-Lise</p>
-  </Col> 
+  </Col>
+  <Col sm="4">
+    <Horloge></Horloge>
+  </Col>
   <Col sm="1"> 
   <p> </p> 
    <Bouton></Bouton> 
@@ -44,13 +47,7 @@ return (
 
 <br></br>
 
-<Row>
-<Col sm= "1"></Col>
-<Horloge></Horloge>
-<Col sm= "2"></Col>
-<Col sm= "2"></Col>
 
-</Row>
 
 <br></br>
 <Row><Galerie > </Galerie></Row>
