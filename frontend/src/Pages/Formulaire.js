@@ -23,16 +23,7 @@ return (
  
   
 
-<Row>
-  <Col sm="10">
-    <Perso> </Perso>
-    <p> Salut c'est moi je suis Anne-Lise</p>
-  </Col> 
-  <Col sm="2"> 
-  <p> </p> 
-   <Bouton></Bouton> 
-    </Col>
-</Row>
+
 
 <Row>
 

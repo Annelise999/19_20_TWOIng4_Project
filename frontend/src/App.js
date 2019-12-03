@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Dashboard from './Pages/Dashboard';
 import Formulaire from './Pages/Formulaire';
+import Perso from "./Component/Perso/Perso";
+import Bouton from"./Component/Bouton/Bouton";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +14,7 @@ import {
 } from "react-router-dom";
 import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
-
+import { Nav, NavBar } from 'react-bootstrap';
 
 class App extends Component{
   render(){
@@ -24,23 +26,29 @@ class App extends Component{
       <div>
         <Row>
           
-          <Col sm="1" style={{padding:0}}>
-            <div className="Menu" >
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/about">Formulaire</Link>
-            </li>
-          </ul>
-        </nav>
-        </div>
-        </Col>
-        <Col sm="11"style={{padding:0}}>
+          
+        <Col sm="12"style={{padding:0}}>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+        
+        
+  <div className= "Hautdepage">
+   <Row> 
+    <Col sm="10">
+    <Perso> </Perso>
+    </Col>
+
+  <Col sm="2"> 
+  <p></p>
+  <Nav className="mr-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/about">Admin</Nav.Link>
+      
+  </Nav> 
+    </Col>
+  </Row>  </div>
+
+
         <Switch>
           <Route path="/about">
             <About />
