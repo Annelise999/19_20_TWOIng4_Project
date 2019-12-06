@@ -14,7 +14,7 @@ import {
 } from "react-router-dom";
 import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
-import { Nav, NavBar } from 'react-bootstrap';
+import { Nav, NavDropdown } from 'react-bootstrap';
 
 class App extends Component{
   render(){
@@ -34,17 +34,26 @@ class App extends Component{
         
   <div className= "Hautdepage">
    <Row> 
-    <Col lg= "10" md= "9" sm="8">
+    <Col lg= "8" md= "7" xs="6">
     <Perso> </Perso>
     </Col>
 
-  <Col lg= "2" md = "3" sm="4"> 
+  <Col lg="4" md="5" className="d-none d-xs-none d-md-block- d-lg-block"> 
   <p></p>
   <Nav className="mr-auto">
       <Nav.Link href="/">Home</Nav.Link>
       <Nav.Link href="/about">Admin</Nav.Link>
       
   </Nav> 
+    </Col>
+    
+    <Col xs="4" sm="4" md="2" className ="d-xs-block d-md-none">
+    <NavDropdown title="Menu" id="basic-nav-dropdown">
+        <NavDropdown.Item href="/">Home</NavDropdown.Item>
+        <NavDropdown.Item href="/about">Admin</NavDropdown.Item>
+        
+       
+      </NavDropdown>
     </Col>
   </Row>  </div>
 

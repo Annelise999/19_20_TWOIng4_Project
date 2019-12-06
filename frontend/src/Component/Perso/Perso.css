@@ -24,10 +24,11 @@
 }
 
 .Profil  img{
-    margin-left: 6em;
+    margin-left: 1em;
 }
 
 .Profil  Nav{
     
     margin-left: 2em;
+    margin-right: auto;
 }

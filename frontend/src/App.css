@@ -85,3 +85,12 @@
 .Hautdepage > img{
   margin-left: 1em;
 }
+.mr-auto {
+  float: right;
+  padding-right: 2em;
+}
+
+#basic-nav-dropdown{
+  float: right;
+  padding-right: 2em;
+}
