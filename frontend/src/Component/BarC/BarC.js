@@ -10,25 +10,25 @@ class Charte extends Component {
     render() {
         const data = [
             {
-              name: 'Mai', Enquêtes: 12, 
+              name: 'Mai', Température: 18, 
             },
             {
-              name: 'Juin', Enquêtes: 13, 
+              name: 'Juin', Température: 19, 
             },
             {
-              name: 'Juil', Enquêtes: 98, 
+              name: 'Juil', Température: 21, 
             },
             {
-              name: 'Aou', Enquêtes: 39, 
+              name: 'Aou', Température: 22, 
             },
             {
-              name: 'Sep', Enquêtes: 48, 
+              name: 'Sep', Température: 25, 
             },
             {
-              name: 'Oct', Enquêtes: 38, 
+              name: 'Oct', Température: 30, 
             },
             {
-              name: 'Nov', Enquêtes: 43, 
+              name: 'Nov', Température: 29, 
             },
           ];
 
@@ -50,7 +50,7 @@ class Charte extends Component {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Enquêtes" barSize={20} fill="#413ea0" />           
+            <Bar dataKey="Température" barSize={20} fill="#413ea0" />           
           </ComposedChart>
         </ResponsiveContainer>
       </div>

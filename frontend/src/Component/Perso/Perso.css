@@ -6,6 +6,10 @@
     width:90px;
     height:90px;
 }
+.Profil {
+    margin-left:3em;
+  
+}
 
 .Profil > img, h2{
 
@@ -14,6 +18,7 @@
 
 .Profil > h2{
     margin-left: 2em;
+    padding-left: 2em;
 }
 
 .Profil > img{
