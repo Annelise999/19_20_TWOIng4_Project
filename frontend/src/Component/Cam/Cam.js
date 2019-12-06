@@ -8,10 +8,10 @@ import {
 
 
  const data = [
-            { name: 'Professeur Violet', value: 400 },
-            { name: 'Colonnel Moutarde', value: 300 },
-            { name: 'Mlle Rose', value: 300 },
-            { name: 'Madame Pervenche', value: 200 },
+            { name: 'Azote (N2)', value: 800 },
+            { name: 'Dioxygène (02)', value: 150 },
+            { name: 'Dioxyde de carbone (C02)', value: 30 },
+            { name: 'Autres gazs', value: 20 },
           ];
           
           const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -40,7 +40,7 @@ class Cam extends Component{
        
        <div className="widget" >
 
-            <h4 class="suspect"> SUSPECTS DU MOMENT</h4>
+            <h4 class="air"> QUALITE DE L'AIR</h4>
        
      <Row>
          <Col md= "12" lg="5">  <PieChart class= "camembert" width={350} height={250}>
@@ -64,10 +64,10 @@ class Cam extends Component{
    
     <Col lg="5" className="d-none d-lg-block">
 <br></br>
-      <Row><p class="suspect1"> Colonnel Moutarde</p> </Row>
-      <Row><p class="suspect2"> Professeur Violet</p></Row> 
-      <Row><p class="suspect3"> Mademoiselle Rose</p></Row>
-      <Row><p class="suspect4"> Madame Pervenche</p></Row>
+      <Row><p class="air1"> - Azote (N2)</p> </Row>
+      <Row><p class="air2"> - Dioxygène (02)</p></Row> 
+      <Row><p class="air3"> - Dioxyde de carbone (C02)</p></Row>
+      <Row><p class="air4"> - Autres gazs</p></Row>
 </Col>
 
        

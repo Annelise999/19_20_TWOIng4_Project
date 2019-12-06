@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../../App.css";
+import { get } from 'https';
 
 class Linecform extends Component {
 
@@ -24,6 +25,7 @@ class Linecform extends Component {
       handleSubmit(event) {
         alert('Les informations ont bien été prises en compte pour ' + this.state.Name);
         event.preventDefault();
+
       }
 
 

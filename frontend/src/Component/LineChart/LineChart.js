@@ -11,25 +11,25 @@ class LineChart extends Component {
     render() {
       const data = [
         {
-          name: 'Mai', Salary: 1400, amt: 2400,
+          name: 'Mai', Humidity: 1400, 
         },
         {
-          name: 'Juin', Salary: 1500, amt: 2210,
+          name: 'Juin', Humidity: 1500, 
         },
         {
-          name: 'Juil', Salary: 4000, amt: 2290,
+          name: 'Juil', Humidity: 4000, 
         },
         {
-          name: 'Aou', Salary: 2780, amt: 2000,
+          name: 'Aou', Humidity: 2780, 
         },
         {
-          name: 'Sep', Salary: 1890, amt: 2181,
+          name: 'Sep', Humidity: 1890, 
         },
         {
-          name: 'Oct', Salary: 2390, amt: 2500,
+          name: 'Oct', Humidity: 2390, 
         },
         {
-          name: 'Nov', Salary: 3490, amt: 2100,
+          name: 'Nov', Humidity: 3490, 
         },
       ];
       
@@ -52,7 +52,7 @@ class LineChart extends Component {
           <Legend />
          
          
-          <Line type="monotone" dataKey="Salary" stroke="#ff7300" />
+          <Line type="monotone" dataKey="Humidity" stroke="#ff7300" />
         </ComposedChart>
       </ResponsiveContainer>
     </div>
