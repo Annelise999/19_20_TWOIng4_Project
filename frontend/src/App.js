@@ -34,18 +34,11 @@ class App extends Component{
         
   <div className= "Hautdepage">
    <Row> 
-    <Col sm="10">
+    <Col sm="12">
     <Perso> </Perso>
     </Col>
 
-  <Col sm="2"> 
-  <p></p>
-  <Nav className="mr-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/about">Admin</Nav.Link>
-      
-  </Nav> 
-    </Col>
+ 
   </Row>  </div>
 
 

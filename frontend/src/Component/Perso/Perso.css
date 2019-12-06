@@ -7,15 +7,23 @@
     height:90px;
 }
 
-.Profil > img, h2{
+.Profil > img, h3{
 
     display: inline-block;
 }
 
-.Profil > h2{
-    margin-left: 2em;
+.Profil  h3{
+    margin-top: 1rem;
+    margin-left: 1em;
+    float: left;
+    font:20%;
 }
 
-.Profil > img{
-    margin-left: 1em;
+.Profil  img{
+    margin-left: 6em;
+}
+
+.Profil  Nav{
+    
+    margin-left: 2em;
 }
