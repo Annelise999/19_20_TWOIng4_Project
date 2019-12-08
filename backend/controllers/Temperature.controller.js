@@ -51,10 +51,10 @@ class TemperatureController {
         });
     }
     
-    async getleshorspistes(req,res){
+    async getlestemperature(req,res){
              try{
-                let horspistes = await HorsPiste.find().lean().exec();
-                return res.json(horspistes); 
+                let temperatures = await Temperature.find().lean().exec();
+                return res.json(temperatures); 
             }
             catch(err){
                 return next(err);
