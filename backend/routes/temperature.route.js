@@ -1,4 +1,4 @@
-import TemperatureController from '../Controller/Temperature.controller';
+import TemperatureController from '../controllers/Temperature.controller';
 import express from 'express';
 const router = express.Router();
 

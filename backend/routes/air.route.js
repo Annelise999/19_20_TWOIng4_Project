@@ -1,4 +1,4 @@
-import AirController from '../Controller/Air.controller';
+import AirController from '../controllers/Air.controller';
 import express from 'express';
 const router = express.Router();
 

@@ -1,4 +1,4 @@
-import HumidityController from '../Controller/Humidity.controller';
+import HumidityController from '../controllers/Humidity.controller';
 import express from 'express';
 const router = express.Router();
 

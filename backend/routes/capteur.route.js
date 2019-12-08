@@ -1,4 +1,4 @@
-import CapteurController from '../Controller/Capteur.controller';
+import CapteurController from '../controllers/Capteur.controller';
 import express from 'express';
 const router = express.Router();
 

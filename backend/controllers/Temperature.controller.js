@@ -1,5 +1,6 @@
 
-import Temperature from "../model/Temperature.model";
+
+var Temperature = require('../model/Temperature.model');
 const querystring = require('querystring');
 
 
@@ -55,4 +56,4 @@ class TemperatureController {
     
 }
 
-export default new TemperatureController();
+module.exports = new TemperatureController; 
