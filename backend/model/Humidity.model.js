@@ -4,11 +4,11 @@ mongoose.set('useCreateIndex', true);
 
 const HumiditySchema = new Schema({  
     valeur: {
-      type: int,
+      type: Number,
       required: true
     },
     jour: {
-      type: int,
+      type: Number,
       required: true
     },
     mois: {
@@ -16,7 +16,7 @@ const HumiditySchema = new Schema({
       required: true
     },
     annee: {
-      type: int,
+      type: Number,
       required: true
     }
   },

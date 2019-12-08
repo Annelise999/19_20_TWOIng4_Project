@@ -15,7 +15,7 @@ class TemperatureController {
                 valeur: req.body.valeur,
                 jour: req.body.jour,
                 mois: req.body.mois,
-                annnee: req.body.annee
+                annee: req.body.annee
             });
            
             newTemperature.save((err) => {
@@ -30,6 +30,13 @@ class TemperatureController {
         }
     } 
     
+    getlatemperature(req,res) {
+        res.json({message: "ok"});
+    }
+
+
+
+
     GetTemperature(req,res) {
         Temperature.findOne({
             nom: req.params.nom

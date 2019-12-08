@@ -1,9 +1,11 @@
-import TemperatureController from '../controllers/Temperature.controller';
-import express from 'express';
+
+var TemperatureController = require('../controllers/Temperature.controller');
+var express = require('express');
+
 const router = express.Router();
 
-router.post('/', TemperatureController.ajouttemperature);
-router.get('/:nom', TemperatureController.getlatemperature);
-router.get('/', TemperatureController.getlestemperature);
+router.post('/', TemperatureController.AjoutTemperature);
+router.get('/', TemperatureController.getlatemperature);
+//router.get('/', TemperatureController.getlestemperature);
 
-export default router;
+module.exports = router;
