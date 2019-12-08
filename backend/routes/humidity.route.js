@@ -1,5 +1,5 @@
-import HumidityController from '../Controller/Humidity.controller';
-import express from 'express';
+var HumidityController =require ("../Controller/Humidity.controller");
+var express = require ("express");
 const router = express.Router();
 
 router.post('/', HumidityController.ajouthumidity);

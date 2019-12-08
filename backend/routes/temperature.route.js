@@ -1,5 +1,5 @@
-import TemperatureController from '../Controller/Temperature.controller';
-import express from 'express';
+var TemperatureController  =require ("../Controller/Temperature.controller");
+var express = require ("express");
 const router = express.Router();
 
 router.post('/', TemperatureController.ajouttemperature);

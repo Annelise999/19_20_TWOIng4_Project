@@ -1,9 +1,9 @@
-import CapteurController from '../Controller/Capteur.controller';
-import express from 'express';
+var CapteurController = require("../Controller/Capteur.controller");
+var express = require ("express");
 const router = express.Router();
 
 router.post('/', CapteurController.ajoutcapteur);
 router.get('/:nom', CapteurController.getlecapteur);
 router.get('/', CapteurController.getlescapteur);
 
-export default router;
+module.exports = router;

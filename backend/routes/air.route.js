@@ -1,5 +1,5 @@
-import AirController from '../Controller/Air.controller';
-import express from 'express';
+var AirController =require ("../Controller/Air.controller");
+var express = require ("express");
 const router = express.Router();
 
 router.post('/', AirController.ajouthumidity);
