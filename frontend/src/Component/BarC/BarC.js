@@ -30,6 +30,9 @@ class Charte extends Component {
             {
               name: 'Nov', Température: 29, 
             },
+            {
+              name: 'Dec', Température: 29, 
+            },
           ];
 
 
