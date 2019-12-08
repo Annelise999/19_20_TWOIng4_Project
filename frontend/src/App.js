@@ -38,7 +38,7 @@ class App extends Component{
     <Perso> </Perso>
     </Col>
 
-  <Col lg="4" md="5" className="d-none d-xs-none d-md-block- d-lg-block"> 
+  <Col lg="4" md="5" className="d-none d-sm-none d-md-block "> 
   <p></p>
   <Nav className="mr-auto">
       <Nav.Link href="/">Home</Nav.Link>
@@ -47,7 +47,7 @@ class App extends Component{
   </Nav> 
     </Col>
     
-    <Col xs="4" sm="4" md="2" className ="d-xs-block d-md-none">
+    <Col xs="4" sm="4" md="2" className ="d-md-none d-sm-block ">
     <NavDropdown title="Menu" id="basic-nav-dropdown">
         <NavDropdown.Item href="/">Home</NavDropdown.Item>
         <NavDropdown.Item href="/about">Admin</NavDropdown.Item>
