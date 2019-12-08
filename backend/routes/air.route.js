@@ -1,10 +1,10 @@
-import airController from '../Controller/air.controller';
+import AirController from '../Controller/Air.controller';
 import express from 'express';
 const router = express.Router();
 
-router.post('/', airController.ajouthumidity);
-router.get('/:nom', airController.getlemassif);
-router.get('/', airController.getlesmassifs);
+router.post('/', AirController.ajouthumidity);
+router.get('/:nom', AirController.getlemassif);
+router.get('/', AirController.getlesmassifs);
 
 
 export default router;

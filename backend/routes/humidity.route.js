@@ -1,10 +1,10 @@
-import humidityController from '../Controller/humidity.controller';
+import HumidityController from '../Controller/Humidity.controller';
 import express from 'express';
 const router = express.Router();
 
-router.post('/', humidityController.ajouthumidity);
-router.get('/:nom', humidityController.getlemassif);
-router.get('/', humidityController.getlesmassifs);
+router.post('/', HumidityController.ajouthumidity);
+router.get('/:nom', HumidityController.getlemassif);
+router.get('/', HumidityController.getlesmassifs);
 
 
 export default router;

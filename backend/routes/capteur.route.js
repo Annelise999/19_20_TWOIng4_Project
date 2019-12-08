@@ -1,9 +1,9 @@
-import capteurController from '../Controller/temperature.controller';
+import CapteurController from '../Controller/Capteur.controller';
 import express from 'express';
 const router = express.Router();
 
-router.post('/', capteurController.ajoutcapteur);
-router.get('/:nom', capteurController.getlecapteur);
-router.get('/', capteurController.getlescapteur);
+router.post('/', CapteurController.ajoutcapteur);
+router.get('/:nom', CapteurController.getlecapteur);
+router.get('/', CapteurController.getlescapteur);
 
 export default router;
