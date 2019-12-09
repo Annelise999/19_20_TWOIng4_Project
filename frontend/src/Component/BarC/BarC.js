@@ -52,8 +52,8 @@ class Charte extends Component {
          .then(function (response) {
              response.data.forEach(function(element) {
                  newdata = {
-                     'name': element.mois , 
-                     'Température':element.valeur 
+                     'name': element._id , 
+                     'Température': element.moyenne 
                     
                  }
              data.push(newdata);
