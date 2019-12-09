@@ -8,7 +8,8 @@ Modules necessaires:
 
 Lancement du projet :
 
-Lancer d'abord le dossier Backend sur le localhost 3000
+Lancer d'abord le dossier Backend sur le localhost 3000.
+
 Puis lancer le Front sur un autre port (ex localhost 3001)
 
 
