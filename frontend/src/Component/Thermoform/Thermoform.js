@@ -6,7 +6,9 @@ class Thermoform extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
+            name: '',
+            valeur:'',
+
          
     };
     this.handleChange = this.handleChange.bind(this);
@@ -14,7 +16,7 @@ class Thermoform extends Component {
     }
 
     handleChange(event) {
-        this.setState({Name: event.target.value});
+        this.setState({name: event.target.name, valeur: event.target.valeur});
       }
     
       handleSubmit(event) {
@@ -32,8 +34,12 @@ class Thermoform extends Component {
                     
                     <form onSubmit={this.handleSubmit}>
                     <label>
-                    Temperature :
-                    <input type="number" value={this.state.value} onChange={this.handleChange} />
+                    Nom du capteur :
+                    <input type="text" value={this.state.name} onChange={this.handleChange} />
+                    </label>
+                    <label>
+                    Valeur :
+                    <input type="Number" value={this.state.valeur} onChange={this.handleChange} />
                     </label>
                     
                     <input type="submit" value="Submit" />

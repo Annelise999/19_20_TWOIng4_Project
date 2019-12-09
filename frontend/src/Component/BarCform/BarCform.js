@@ -1,53 +1,95 @@
 import React, { Component } from 'react';
 import "../../App.css";
-
+import axios from 'axios';
 
 class BarCform extends Component {
     
     constructor(props) {
         super(props);
-        this.state = {
-            Name: '',
-            Enquetes_resol:'',
-            arg_gagne:''
+        
     
     
-    };
-    
-    this.handleChange = this.handleChange.bind(this);
+    this.jourhandleChange = this.jourhandleChange.bind(this);
+    this.moishandleChange = this.moishandleChange.bind(this);
+    this.anneehandleChange = this.anneehandleChange.bind(this);
+    this.valeurhandleChange = this.valeurhandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({Name: event.target.Name , Enquetes_resol:event.target.Enquetes_resol, arg_gagne:event.target.arg_gagne});
+    state = {
+        Jour: '',
+        Mois: '',
+        Annee: '',
+        Temperature:''
+
+    }
+   
+      jourhandleChange(event) {
+        this.setState({Jour: event.target.Jour });
       }
+      moishandleChange(event) {
+        this.setState({Mois: event.target.Mois});
+      }
+      anneehandleChange(event) {
+        this.setState({Annee: event.target.Annee});
+      }
+      valeurhandleChange(event) {
+        this.setState({Temperature:event.target.Temperature});
+      }
+      
     
-      handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte' + this.state.value);
-        event.preventDefault();
-      }
+    handleSubmit(event) {
+        
+       
+        
+    
+        var requestBody = {
+                valeur: this.state.Temperature,
+                jour: this.state.Jour,
+                mois: this.state.Mois,
+                annee: this.state.Annee,
+        
+         }
+         alert(this.state.Temperature);
+         alert('Les informations ont bien été prises en compte');
+
+        axios.post('http://localhost:3000/api/temp',requestBody)
+        .then(res => {
+        console.log(requestBody);
+        console.log(res.data);
+        }
+      )
+      
+
+    }
 
     render() {
         return (
             <div className="Formulaire">
                     
-                    <h3>Formulaire pour BarC</h3>
+                    <h3>Ajouter une température</h3>
                     
                     <form onSubmit={this.handleSubmit}>
                     <label>
-                    Name:   
-                    <input type="text" value={this.state.Name} onChange={this.handleChange} />
+                    Jour:
+                    <input type="Number" value={this.state.Jour}  onChange={this.jourhandleChange} style={{ width: "25%" }}/>
                     </label>
                     <label>
-                    Enquetes resolues:   
-                    <input type="number" value={this.state.Enquetes_resol} onChange={this.handleChange} />
+                    Mois:
+                    <input type="text" value={this.state.Mois}  onChange={this.moishandleChange}style={{ width: "25%" }}/>
                     </label>
                     <label>
-                    Argent gagné:   
-                    <input type="number" value={this.state.arg_gagne} onChange={this.handleChange} />
+                    Année:
+                    <input type="Number" value={this.state.Annee}  onChange={this.anneehandleChange}style={{ width: "30%" }}/>
                     </label>
                     
-                    <input type="submit" value="Submit" />
+                    <label>
+                    Température:   
+                    <input type="Number" value={this.state.Temperature} onChange={this.valeurhandleChange} style={{ width: "70%" }}/>
+                    </label>
+                   
+                    
+                    <input type="submit" value="Submit"  />
                     
                     </form>
             </div>

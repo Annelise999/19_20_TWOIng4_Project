@@ -30,22 +30,22 @@ class Camform extends Component {
         return (
             <div className="Formulaire">
                 
-                <h3>Formulaire pour Cam</h3>
+                <h3>Composition de l'air</h3>
                 
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                    choisissez votre suspect:
+                    Choisissez le composant:
                     <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="Colonel Moutarde">Colonel Moutarde</option>
-                        <option value="Professeur violet">Professeur violet</option>
-                        <option value="Mademoiselle Rose">Mademoiselle Rose</option>
-                        <option value="Madame Pervenche">Madame Pervenche</option>
+                        <option value="N2">Azote N2</option>
+                        <option value="O2">Dioxygène O2</option>
+                        <option value="Dioxyde de Carbone">CO2</option>
+                        <option value="Autre Gaz">Autre Gaz</option>
                     </select>
                     </label>
 
                     <label>
                     Pourcentage:
-                    <input type="number" value={this.state.pourcentage} onChange={this.handleChange} />
+                    <input type="number" value={this.state.pourcentage} onChange={this.handleChange} style={{width:"70%"}}/>
                     </label>
 
 

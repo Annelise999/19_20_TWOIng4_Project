@@ -7,9 +7,10 @@ class Linecform extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Name: '',
-            Salaire:'',
-            amt:''
+            Jour: '',
+            Mois:'',
+            Annee:'',
+            Humidity:'',
     
     
     };
@@ -19,11 +20,11 @@ class Linecform extends Component {
     }
 
     handleChange(event) {
-        this.setState({Name: event.target.Name , Enquetes_resol:event.target.Salaire, arg_gagne:event.target.amt});
+        this.setState({Jour: event.target.Jour , Mois:event.target.Mois, Annee:event.target.Annee, Humidity:event.target.Humidity});
       }
     
       handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte pour ' + this.state.Name);
+        alert('Les informations ont bien été prises en compte pour ' + this.state.Mois);
         event.preventDefault();
 
       }
@@ -33,20 +34,25 @@ class Linecform extends Component {
     render() {
         return (
             <div className="Formulaire">
-                 <h3>Formulaire pour LineC</h3>
+                 <h3>Ajout de l'Humidité</h3>
                     
                     <form onSubmit={this.handleSubmit}>
                     <label>
-                    Name:
-                    <input type="text" value={this.state.Name} onChange={this.handleChange} />
+                    Jour:
+                    <input type="number" value={this.state.Jour}  onChange={this.handleChange} style={{ width: "25%" }}/>
                     </label>
                     <label>
-                    Salaire:
-                    <input type="number" value={this.state.Enquetes_resol} onChange={this.handleChange} />
+                    Mois:
+                    <input type="text" value={this.state.Mois}  onChange={this.handleChange}style={{ width: "25%" }}/>
                     </label>
                     <label>
-                    Argent gagné:
-                    <input type="number" value={this.state.arg_gagne} onChange={this.handleChange} />
+                    Année:
+                    <input type="Number" value={this.state.Annee}  onChange={this.handleChange}style={{ width: "30%" }}/>
+                    </label>
+                    
+                    <label>
+                    Humidité:   
+                    <input type="number" value={this.state.Humidity} onChange={this.handleChange} style={{width:"70%"}}/>
                     </label>
 
                     <input type="submit" value="Submit" />
