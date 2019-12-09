@@ -33,6 +33,8 @@ class Camform extends Component {
                 <h3>Composition de l'air</h3>
                 
                 <form onSubmit={this.handleSubmit}>
+        <tr> 
+            <td>  
                     <label>
                     Choisissez le composant:
                     <select value={this.state.value} onChange={this.handleChange}>
@@ -42,12 +44,17 @@ class Camform extends Component {
                         <option value="Autre Gaz">Autre Gaz</option>
                     </select>
                     </label>
+            </td>
+            </tr>
 
+            <tr> 
+            <td>
                     <label>
                     Pourcentage:
                     <input type="number" value={this.state.pourcentage} onChange={this.handleChange} style={{width:"70%"}}/>
                     </label>
-
+                </td>
+                </tr>
 
                     <input type="submit" value="Submit" />
                 </form>

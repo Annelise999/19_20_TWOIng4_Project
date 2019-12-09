@@ -6,7 +6,13 @@ class BarCform extends Component {
     
     constructor(props) {
         super(props);
-        
+        this.state = {
+            Jour: '',
+            Mois: '',
+            Annee: '',
+            Temperature:''
+    
+        }
     
     
     this.jourhandleChange = this.jourhandleChange.bind(this);
@@ -16,19 +22,13 @@ class BarCform extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    state = {
-        Jour: '',
-        Mois: '',
-        Annee: '',
-        Temperature:''
-
-    }
+   
    
       jourhandleChange(event) {
         this.setState({Jour: event.target.Jour });
       }
       moishandleChange(event) {
-        this.setState({Mois: event.target.Mois});
+        this.setState({Mois: [event.target.Mois]});
       }
       anneehandleChange(event) {
         this.setState({Annee: event.target.Annee});
@@ -40,9 +40,6 @@ class BarCform extends Component {
     
     handleSubmit(event) {
         
-       
-        
-    
         var requestBody = {
                 valeur: this.state.Temperature,
                 jour: this.state.Jour,
@@ -50,7 +47,7 @@ class BarCform extends Component {
                 annee: this.state.Annee,
         
          }
-         alert(this.state.Temperature);
+         alert(this.state.mois);
          alert('Les informations ont bien été prises en compte');
 
         axios.post('http://localhost:3000/api/temp',requestBody)
@@ -70,24 +67,34 @@ class BarCform extends Component {
                     <h3>Ajouter une température</h3>
                     
                     <form onSubmit={this.handleSubmit}>
+                    
+            <tr> 
+                <td>
                     <label>
                     Jour:
-                    <input type="Number" value={this.state.Jour}  onChange={this.jourhandleChange} style={{ width: "25%" }}/>
+                    <input type="Number" value={this.setState.Jour}  onChange={this.jourhandleChange} style={{ width: "25%" }}/>
                     </label>
+               
                     <label>
                     Mois:
-                    <input type="text" value={this.state.Mois}  onChange={this.moishandleChange}style={{ width: "25%" }}/>
+                    <input type="text" value={this.setState.Mois}  onChange={this.moishandleChange} style={{ width: "25%" }}/>
                     </label>
+                
+            
+     
                     <label>
                     Année:
-                    <input type="Number" value={this.state.Annee}  onChange={this.anneehandleChange}style={{ width: "30%" }}/>
+                    <input type="Number" value={this.setState.Annee}  onChange={this.anneehandleChange} style={{ width: "30%" }}/>
                     </label>
-                    
+                </td></tr>
+             <tr>   
+                <td> 
                     <label>
                     Température:   
                     <input type="Number" value={this.state.Temperature} onChange={this.valeurhandleChange} style={{ width: "70%" }}/>
                     </label>
-                   
+                </td>
+            </tr>   
                     
                     <input type="submit" value="Submit"  />
                     

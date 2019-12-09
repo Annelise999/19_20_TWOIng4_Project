@@ -37,7 +37,9 @@ class Linecform extends Component {
                  <h3>Ajout de l'Humidité</h3>
                     
                     <form onSubmit={this.handleSubmit}>
-                    <label>
+                    
+     <tr> 
+            <td>    <label>
                     Jour:
                     <input type="number" value={this.state.Jour}  onChange={this.handleChange} style={{ width: "25%" }}/>
                     </label>
@@ -49,12 +51,15 @@ class Linecform extends Component {
                     Année:
                     <input type="Number" value={this.state.Annee}  onChange={this.handleChange}style={{ width: "30%" }}/>
                     </label>
-                    
+              </td></tr>
+    <tr> 
+            <td>               
                     <label>
                     Humidité:   
                     <input type="number" value={this.state.Humidity} onChange={this.handleChange} style={{width:"70%"}}/>
                     </label>
-
+            </td>
+    </tr>
                     <input type="submit" value="Submit" />
                     </form>
             </div>
