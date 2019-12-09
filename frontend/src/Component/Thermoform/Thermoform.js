@@ -6,7 +6,7 @@ class Thermoform extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            name:'',
             valeur:'',
 
          
@@ -20,7 +20,7 @@ class Thermoform extends Component {
       }
     
       handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte pour la temperature');
+        alert('Les informations ont bien été prises en compte pour la temperature' + this.state.name);
         event.preventDefault();
       }
 
@@ -30,18 +30,26 @@ class Thermoform extends Component {
     render() {
         return (
             <div className="Formulaire">
-                <h3>Formulaire Thermomètre</h3>
+                <h3>Ajouter un capteur</h3>
                     
                     <form onSubmit={this.handleSubmit}>
+        <tr> 
+            <td>
                     <label>
                     Nom du capteur :
-                    <input type="text" value={this.state.name} onChange={this.handleChange} />
+                    <input type="text" value={this.state.name} onChange={this.handleChange} style={{width:"70%"}} />
                     </label>
+           </td>
+           </tr>
+
+           <tr> 
+            <td>         
                     <label>
                     Valeur :
-                    <input type="Number" value={this.state.valeur} onChange={this.handleChange} />
+                    <input type="Number" value={this.state.valeur} onChange={this.handleChange} style={{width:"70%"}} />
                     </label>
-                    
+               </td>
+               </tr>     
                     <input type="submit" value="Submit" />
                     </form>
             </div>

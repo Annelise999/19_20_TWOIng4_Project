@@ -29,11 +29,14 @@ class Galerieform extends Component {
                  <h3>Nouvelle photo</h3>
                     
                     <form onSubmit={this.handleSubmit}>
+         <tr> 
+            <td>
                     <label>
                    
-                    <input type="file" value={this.state.value} onChange={this.handleChange} />
+                    <input type="file" value={this.state.value} onChange={this.handleChange} style={{width:"80%"}} />
                     </label>
-                    
+              </td>
+              </tr>      
 
                     <input type="submit" value="Submit" />
                     </form>
