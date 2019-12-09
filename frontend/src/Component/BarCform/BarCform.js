@@ -4,15 +4,18 @@ import axios from 'axios';
 
 class BarCform extends Component {
     
-    constructor(props) {
-        super(props);
-        this.state = {
-            Jour: '',
-            Mois: '',
-            Annee: '',
-            Temperature:''
     
-        }
+  state = {
+    Jour: '',
+    Mois: '',
+    Annee: '',
+    Temperature:''
+
+}
+  
+  constructor(props) {
+        super(props);
+        
     
     
     this.jourhandleChange = this.jourhandleChange.bind(this);
@@ -25,21 +28,21 @@ class BarCform extends Component {
    
    
       jourhandleChange(event) {
-        this.setState({Jour: event.target.Jour });
+        this.setState({Jour: event.target.value});
       }
       moishandleChange(event) {
-        this.setState({Mois: [event.target.Mois]});
+        this.setState({Mois: event.target.value});
       }
       anneehandleChange(event) {
-        this.setState({Annee: event.target.Annee});
+        this.setState({Annee: event.target.value});
       }
       valeurhandleChange(event) {
-        this.setState({Temperature:event.target.Temperature});
+        this.setState({Temperature :event.target.value});
       }
       
     
     handleSubmit(event) {
-        
+      event.preventDefault();
         var requestBody = {
                 valeur: this.state.Temperature,
                 jour: this.state.Jour,
@@ -47,7 +50,7 @@ class BarCform extends Component {
                 annee: this.state.Annee,
         
          }
-         alert(this.state.mois);
+         
          alert('Les informations ont bien été prises en compte');
 
         axios.post('http://localhost:3000/api/temp',requestBody)
@@ -72,19 +75,19 @@ class BarCform extends Component {
                 <td>
                     <label>
                     Jour:
-                    <input type="Number" value={this.setState.Jour}  onChange={this.jourhandleChange} style={{ width: "25%" }}/>
+                    <input type="Number" value={this.state.Jour}  onChange={this.jourhandleChange} style={{ width: "25%" }}/>
                     </label>
                
                     <label>
                     Mois:
-                    <input type="text" value={this.setState.Mois}  onChange={this.moishandleChange} style={{ width: "25%" }}/>
+                    <input type="text"   onChange={this.moishandleChange} style={{ width: "25%" }}/>
                     </label>
                 
             
      
                     <label>
                     Année:
-                    <input type="Number" value={this.setState.Annee}  onChange={this.anneehandleChange} style={{ width: "30%" }}/>
+                    <input type="Number" value={this.state.Annee}  onChange={this.anneehandleChange} style={{ width: "30%" }}/>
                     </label>
                 </td></tr>
              <tr>   
