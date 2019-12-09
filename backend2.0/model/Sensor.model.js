@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema , ObjectId = Schema.ObjectId;
 mongoose.set('useCreateIndex', true);
 
 const SensorSchema = new Schema({  

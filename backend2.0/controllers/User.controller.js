@@ -1,51 +1,69 @@
 var User = require('../model/User.model');
+var Sensor = require('../model/Sensor.model');
 
 
 class UserController {
-    ajouthumidity(req, res) {
-        
-        //verification des données
-        if (!req.body.valeur || !req.body.jour || !req.body.mois || !req.body.annee) {
-            res.json({success: false, msg: 'Informations manquantes pour enregistrer une valeur humidité'});
+    createUser(req,res){
+        if (!req.body.location || !req.body.personsInHouse || !req.body.houseSize) {
+            res.json({success: false, msg: 'Informations manquantes pour enregistrer un user'});
         }else {
-            var newHumidity = new Humidity({
-                valeur: req.body.valeur,
-                jour: req.body.jour,
-                mois: req.body.mois,
-                annee: req.body.annee
+            var newUser = new User({
+                location: req.body.location,
+                personsInHouse: req.body.personsInHouse,
+                houseSize: req.body.houseSize
             });
            
-            newHumidity.save((err) => {
+            newUser.save((err) => {
                 if (err) {
                     console.log(err);
-                    return res.json({success: false, msg: 'Cette humidité existe déja'});
+                    return res.json({success: false});
                 }
                 
-                res.json({success: true, msg: 'Humidité créée avec succès'});
+                res.json({success: true, msg: 'User créé avec succès'});
                 
             });
         }
-    } 
-
-
-    async getleshumidities(req,res){
+    }
+    
+    async readCurrentUser(req,res){
+        if (!req.body.userId) {
+            res.json({success: false, msg: 'Il manque l id du user'});
+        }else{
+            try{
+                let user = await User.findById(req.body.userId).lean().exec();
+                return res.json(user); 
+             
+            }
+            catch(err){
+                return next(err);
+            } 
+        }
+    }
+    
+    async readAllUsers(req,res){
         try{
-
-          //let temperatures = await Temperature.find(
-            //  {"valeur":{$gt:10 }},{"mois":1, "valeur":1}).lean().exec();
-           
-           // let temperatures = await Temperature.distinct("mois").lean().exec();
-
-           let humidities = await Humidity.aggregate( [ {$unwind : "$valeur"}, { $group : {"_id" : "$mois", "moyenne" : {$avg : "$valeur"} } }] );
-           
-           
-           
-           return res.json(humidities); 
-       }
-       catch(err){
-           return next(err);
-       }    
-}
+            let users = await User.find().lean().exec();
+            return res.json(users); 
+         
+        }
+        catch(err){
+            return next(err);
+        }    
+    }
+    
+    async readSensorsNumber(req,res){
+        if (!req.body.userId) {
+            res.json({success: false, msg: 'Il manque l id du user'});
+        }else{
+            try{
+                let sensors = await Sensor.find({userId: req.body.userId}).count().lean().exec();
+                return res.json({nb_sensors: sensors})
+            }
+            catch(err){
+                return next(err);
+            } 
+        }
+    }
   
     
 }
