@@ -1,3 +1,19 @@
+# Projet DashBoard
+
+Anne-Lise Herve & Joseph Dupont
+
+
+Modules necessaires:
+
+
+Lancement du projet :
+
+Lancer d'abord le dossier Backend sur le localhost 3000
+Puis lancer le Front sur un autre port (ex localhost 3001)
+
+
+
+
 # Projet de fin de semestre
 
 A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
