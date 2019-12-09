@@ -96,9 +96,9 @@ constructor(props){
    
     <Col lg="5" className="d-none d-lg-block">
 <br></br>
-      <Row><p class="air1"> - Azote (N2)</p> </Row>
+      <Row><p class="air1"> - Dioxyde de carbone (C02)</p> </Row>
       <Row><p class="air2"> - Dioxygène (02)</p></Row> 
-      <Row><p class="air3"> - Dioxyde de carbone (C02)</p></Row>
+      <Row><p class="air3"> - Azote (N2)</p></Row>
       <Row><p class="air4"> - Autres gazs</p></Row>
 </Col>
 
