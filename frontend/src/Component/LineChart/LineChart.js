@@ -3,13 +3,17 @@ import {
   ResponsiveContainer, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import '../Widget.css';
+import axios from 'axios';
 
 
 
 class LineChart extends Component {
 
-    render() {
-      const data = [
+  
+
+
+      state = {
+        data : [
         {
           name: 'Mai', Humidity: 1400, 
         },
@@ -31,8 +35,42 @@ class LineChart extends Component {
         {
           name: 'Nov', Humidity: 3490, 
         },
-      ];
-      
+      ]
+    }
+
+    constructor(props){
+      super(props);
+     
+     var data = [];
+     var self=this;
+     var newdata;  
+     
+      axios.get('http://localhost:3000/api/hum')
+     .then(function (response) {
+         response.data.forEach(function(element) {
+             newdata = {
+                 'name': element._id , 
+                 'Humidity': element.moyenne 
+                
+             }
+         data.push(newdata);
+     });
+     
+     }).then (function(){
+          console.log(data);
+          self.setState({data : data});
+
+     })
+     .catch(function (error) {
+       console.log(error);
+     })
+
+    }  
+
+
+
+
+      render() {
 
     return (
       <div className= "widget droite" style={{ width: '100%', height: 300 }}>
@@ -40,7 +78,7 @@ class LineChart extends Component {
         <ComposedChart
           width={500}
           height={400}
-          data={data}
+          data={this.state.data}
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
           }}

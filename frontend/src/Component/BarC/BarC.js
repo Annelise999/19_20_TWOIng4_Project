@@ -8,9 +8,6 @@ import axios from 'axios';
 
 class Charte extends Component {
 
-    
-  
-  
         state = {
          data : [
           
