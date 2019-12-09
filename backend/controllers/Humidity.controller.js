@@ -37,6 +37,9 @@ class HumidityController {
            // let temperatures = await Temperature.distinct("mois").lean().exec();
 
            let humidities = await Humidity.aggregate( [ {$unwind : "$valeur"}, { $group : {"_id" : "$mois", "moyenne" : {$avg : "$valeur"} } }] );
+           
+           
+           
            return res.json(humidities); 
        }
        catch(err){

@@ -5,17 +5,10 @@ import { Row, Col } from 'react-bootstrap';
 import {
   PieChart, Pie, Cell,
 } from 'recharts';
+import axios from 'axios';
 
 
- const data = [
-            { name: 'Azote (N2)', value: 800 },
-            { name: 'Dioxygène (02)', value: 150 },
-            { name: 'Dioxyde de carbone (C02)', value: 30 },
-            { name: 'Autres gazs', value: 20 },
-          ];
-          
           const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-          
           const RADIAN = Math.PI / 180;
           const renderCustomizedLabel = ({
             cx, cy, midAngle, innerRadius, outerRadius, percent, index,
@@ -34,6 +27,45 @@ import {
 
 class Cam extends Component{
      
+  
+  state = {
+    data : [
+    { name: 'Azote (N2)', value: 800 },
+    { name: 'Dioxygène (02)', value: 150 },
+    { name: 'Dioxyde de carbone (C02)', value: 30 },
+    { name: 'Autres gazs', value: 20 },
+  ]
+}
+
+constructor(props){
+  super(props);
+ 
+ var data = [];
+ var self=this;
+ var newdata;  
+ 
+  axios.get('http://localhost:3000/api/air')
+ .then(function (response) {
+     response.data.forEach(function(element) {
+         newdata = {
+             'name': element.name , 
+             'value': element.value             
+         }
+     data.push(newdata);
+ });
+ 
+ }).then (function(){
+      console.log(data);
+      self.setState({data : data});
+
+ })
+ .catch(function (error) {
+   console.log(error);
+ })
+
+}
+
+
           render () {
       
       return (
@@ -45,7 +77,7 @@ class Cam extends Component{
      <Row>
          <Col md= "12" lg="5">  <PieChart class= "camembert" width={350} height={250}>
         <Pie
-          data={data}
+          data={this.state.data}
           cx={160}
           cy={100}
           labelLine={false}
@@ -55,7 +87,7 @@ class Cam extends Component{
           dataKey="value"
         >
           {
-            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+            this.state.data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
           }
         </Pie>
       </PieChart> </Col>

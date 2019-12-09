@@ -4,31 +4,11 @@ const Schema = mongoose.Schema;
 mongoose.set('useCreateIndex', true);
 
 const AirSchema = new Schema({  
-    CO2: {
-      type: Number,
-      required: true
-    },
-    O2: {
-      type: Number,
-      required: true
-    },
-    N2: {
-      type: Number,
-      required: true
-    },
-    autres: {
-      type: Number,
-      required: true
-    },
-    jour: {
-      type: Number,
-      required: true
-    },
-    mois: {
+    name: {
       type: String,
       required: true
     },
-    annee: {
+    value: {
       type: Number,
       required: true
     }

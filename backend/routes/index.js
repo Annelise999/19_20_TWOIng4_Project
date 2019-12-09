@@ -2,11 +2,13 @@ var express = require('express');
 var mongoose = require ('mongoose');
 var tempRouter = require('./temperature.route');
 var humRouter = require('./humidity.route');
+var airRouter = require('./air.route');
 
 const router = express.Router();
 
 router.use('/api/temp', tempRouter);
 router.use('/api/hum', humRouter);
+router.use('/api/air', airRouter);
 
 
 

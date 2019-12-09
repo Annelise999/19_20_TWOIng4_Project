@@ -3,9 +3,8 @@ var AirController = require('../controllers/Air.controller');
 var express = require('express');
 const router = express.Router();
 
-//router.post('/', AirController.ajouthumidity);
-//router.get('/:nom', AirController.getlemassif);
-//router.get('/', AirController.getlesmassifs);
+router.post('/', AirController.ajoutair);
+router.get('/', AirController.getlesgazs);
 
 
-export default router;
+module.exports = router;
