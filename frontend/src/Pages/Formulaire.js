@@ -27,36 +27,34 @@ return (
 
 <Row>
 
-<Col sm= "4">
+<Col sm=  "12" md="6" lg="4">
 
-<Row><Camform > </Camform></Row>
-
-</Col>
-
-<Col sm=  "4">
-
-<Row><BarCform > </BarCform></Row>
+<Camform > </Camform>
 
 </Col>
 
-<Col sm=  "4">
+<Col sm=  "12" md="6" lg="4">
 
-<Row><LineCform></LineCform></Row>
-
-</Col>
-
-</Row>
-
-<Row>
-<Col sm= "6">
-
-<Row><Galerieform></Galerieform></Row>
+<BarCform > </BarCform>
 
 </Col>
 
-<Col sm=  "6">
+<Col sm=  "12" md="6" lg="4">
 
-<Row><Thermoform > </Thermoform></Row>
+<LineCform></LineCform>
+
+</Col>
+
+
+<Col  sm=  "12" md="6" >
+
+<Galerieform></Galerieform>
+
+</Col>
+
+<Col  sm=  "12" md="6">
+
+<Thermoform > </Thermoform>
 
 </Col>
  
