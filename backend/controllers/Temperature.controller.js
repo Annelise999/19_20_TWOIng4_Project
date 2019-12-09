@@ -1,7 +1,6 @@
 
 
 var Temperature = require('../model/Temperature.model');
-const querystring = require('querystring');
 
 
 class TemperatureController {
@@ -29,32 +28,32 @@ class TemperatureController {
             });
         }
     } 
+
+
+    async getlestemperatures(req,res){
+        try{
+
+          //let temperatures = await Temperature.find(
+            //  {"valeur":{$gt:10 }},{"mois":1, "valeur":1}).lean().exec();
+           
+           // let temperatures = await Temperature.distinct("mois").lean().exec();
+
+           let temperatures = await Temperature.aggregate( [ {$unwind : "$valeur"}, { $group : {"_id" : "$mois", "moyenne" : {$avg : "$valeur"} } }] );
+           return res.json(temperatures); 
+       }
+       catch(err){
+           return next(err);
+       }    
+}
+
+
     
-    getlatemperature(req,res) {
-        res.json({message: "ok"});
-    }
-
-
-
-
-    GetTemperature(req,res) {
-        Temperature.findOne({
-            nom: req.params.nom
-        }, (err, horspiste) => {
-            if (err) throw err;
-
-            if (!horspiste) {
-                res.status(404).send({success: false, msg: 'Hors piste non trouvée'});
-            } else {
-                res.json(horspiste);
-            }
-        });
-    }
     
     async getlestemperature(req,res){
              try{
                 let temperatures = await Temperature.find().lean().exec();
                 return res.json(temperatures); 
+             
             }
             catch(err){
                 return next(err);
