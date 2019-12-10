@@ -13,6 +13,7 @@ class Changeuserform extends Component {
     location:'',
     personsInHouse:'',
     houseSize:'',
+    selecteduserliste:''
 
 
  
@@ -40,9 +41,11 @@ axios.get('http://localhost:3000/api/user/all')
 }
 
 handleChange(event) {
+    this.setState({selecteduserliste: event.target.value});
+  }
+peoplehandleChange(event) {
     this.setState({personsInHouse: event.target.value});
   }
-
 locationhandleChange(event) {
     this.setState({location: event.target.value});
   }
@@ -56,7 +59,7 @@ HousehandleChange(event) {
                 event.preventDefault();
 
                 var requestBody = {
-                    _id: this.state._id,
+                    _id: this.state.selecteduserliste,
                     location: this.state.location,
                     personsInHouse: this.state.personsInHouse,
                     houseSize: this.state.houseSize,
@@ -105,7 +108,7 @@ HousehandleChange(event) {
 
                     <label>
                     People in House :
-                    <input type="number"  onChange={this.handleChange} style={{width:"30%", marginLeft:"1em"}} />
+                    <input type="number"  onChange={this.peoplehandleChange} style={{width:"30%", marginLeft:"1em"}} />
                     </label>
                     <label>
                     Location

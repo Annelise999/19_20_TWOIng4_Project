@@ -12,7 +12,8 @@ class Deleteuserform extends Component {
         _id:'',
         location:'',
         personsInHouse:'',
-        houseSize:''
+        houseSize:'',
+        selecteduserliste:''
     
      
     }
@@ -40,21 +41,17 @@ axios.get('http://localhost:3000/api/user/all')
    
    
     _idhandleChange(event) {
-        this.setState({userliste: event.target.value});
+        this.setState({selecteduserliste: event.target.value});
       }
     
       handleSubmit(event) {
         event.preventDefault();
 
         var requestBody = {
-            _id: this.state._id,
-            location: this.state.location,
-            personsInHouse: this.state.personsInHouse,
-            houseSize: this.state.houseSize,
+            _id: this.state.selecteduserliste,
+           }
 
-    }
-
-            axios.post('http://localhost:3000/api/user',requestBody)
+            axios.delete('http://localhost:3000/api/user',requestBody)
             .then(res => {
             console.log(requestBody);
             console.log(res.data);

@@ -10,6 +10,7 @@ class BarCform extends Component {
   state = {
     Sensorliste:[],
     Temperature:'',
+    selectedsensorliste:''
    
 
 }
@@ -44,8 +45,8 @@ class BarCform extends Component {
    
    
  
-      _idhandleChange(event) {
-        this.setState({Sensorlist: event.target.value});
+    _idhandleChange(event) {
+      this.setState({selectedsensorliste:event.target.value});
       }
 
      

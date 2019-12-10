@@ -27,6 +27,25 @@ class UserController {
         }
     }
     
+    deleteUser(req,res){
+        if (!req.query.userId) {
+            res.json({success: false, msg: "Il manque l'id du user"});
+        }else{
+            try{
+                const {userId}=req.query.userId;
+                _.remove(user, ["_id", userId]);
+                //return res.json(user);
+               
+               
+            }
+            catch(err){
+                return res.json(err);
+            } 
+        }
+    }
+
+
+
     async readCurrentUser(req,res){
         if (!req.body.userId) {
             res.json({success: false, msg: 'Il manque l id du user'});
@@ -41,6 +60,8 @@ class UserController {
             } 
         }
     }
+
+    
     
     async readAllUsers(req,res){
         try{
@@ -67,6 +88,7 @@ class UserController {
         }
     }
   
+
     
 }
 

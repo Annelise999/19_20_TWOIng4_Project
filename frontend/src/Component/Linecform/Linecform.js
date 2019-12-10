@@ -11,13 +11,15 @@ class Linecform extends Component {
     state = {
        
         Sensorliste:[],
-        Humidity:''
+        Humidity:'',
+        selectedsensorliste:''
 
 
 }
    
     constructor(props) {
         super(props);
+
     var self=this;    
    
     this._idhandleChange = this._idhandleChange.bind(this);
@@ -46,8 +48,8 @@ class Linecform extends Component {
 
     
     _idhandleChange(event) {
-    this.setState({Sensorliste:event.target.value});
-    }
+        this.setState({selectedsensorliste:event.target.value});
+        }
     valeurhandleChange(event) {
     this.setState({Humidity:event.target.value});
     }
@@ -64,7 +66,7 @@ class Linecform extends Component {
     
      }
 
-     alert('Les informations ont bien été prises en compte pour ' + this.state.Mois);
+    
 
      axios.post('http://localhost:3000/api/measure',requestBody)
      .then(res => {

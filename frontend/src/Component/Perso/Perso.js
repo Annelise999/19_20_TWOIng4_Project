@@ -11,8 +11,8 @@ import axios from 'axios';
 class Perso extends Component{
  
   state = {
-    userliste: []
-
+    userliste: [],
+    selecteduserliste:''
 
 }
 
@@ -39,7 +39,7 @@ axios.get('http://localhost:3000/api/user/all')
 
 
   handleChange(event) {
-    this.setState({userliste: event.target.value});
+    this.setState({selecteduserliste: event.target.value});
   }
 
   handleSubmit(event) {

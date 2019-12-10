@@ -10,7 +10,8 @@ class Camform extends Component {
 
     state = {
     Sensorliste:[],
-    Airpollution:''
+    Airpollution:'',
+    selectedsensorliste:''
 }
 
 
@@ -41,7 +42,7 @@ class Camform extends Component {
 
 
     _idhandleChange(event) {
-    this.setState({Sensorliste:event.target.value});
+    this.setState({selectedsensorliste:event.target.value});
     }
     valeurhandleChange(event) {
     this.setState({Airpollution:event.target.value});
