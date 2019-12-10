@@ -21,6 +21,7 @@ class Thermoform extends Component {
 
     constructor(props) {
         super(props);
+        const ID= props.ID
         
     
 //    this._idhandleChange = this._idhandleChange.bind(this);
@@ -42,7 +43,7 @@ class Thermoform extends Component {
 
         var requestBody = {
           location: this.state.location,
-          userId:"5ddb94c6fc13ae640c000016"
+          userId: this.props.ID
      
           }
           

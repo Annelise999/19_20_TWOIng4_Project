@@ -13,6 +13,8 @@ class Counter extends Component {
 
     constructor(props){
         super(props);
+        const ID= props.ID
+
         var self=this;
         var data = 0;
 
@@ -20,7 +22,7 @@ class Counter extends Component {
 
         axios.get('http://localhost:3000/api/user/sensors', {
             params: {
-              userId:"5ddb94c6fc13ae640c000015"
+              userId: props.ID
             }
           } )
         .then(function (response) {

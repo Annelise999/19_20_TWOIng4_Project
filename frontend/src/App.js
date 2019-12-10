@@ -9,13 +9,38 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Nav, NavDropdown } from 'react-bootstrap';
 
 class App extends Component{
+
+
+  constructor(props) {
+    super(props);
+
+    this.state= {
+      userID :"5ddb94c6fc13ae640c000015"
+    }
+
+  }
+
+  Home = () => {
+    console.log(this.state.userID)
+    return <Dashboard ID={this.state.userID}/>;
+  }
+  
+  About = () => {
+    return <Formulaire ID={this.state.userID}></Formulaire>;
+  }
+  
+  ChangeUser = (id) => 
+  {
+    this.setState ({userID: id});
+
+  }
+
   render(){
 
     
@@ -53,7 +78,7 @@ class App extends Component{
   
     
     <Col lg= "10" md= "10"  sm ="10"xs="10">
-    <Perso> </Perso>
+    <Perso ID={this.state.userID} functioncallback={this.ChangeUser}> </Perso>
     </Col>
 
   </Row> 
@@ -63,10 +88,10 @@ class App extends Component{
 
         <Switch>
           <Route path="/admin">
-            <About />
+            <this.About />
           </Route>
           <Route path="/">
-            <Home />
+            <this.Home />
           </Route>
         </Switch>
       </Col>
@@ -85,13 +110,6 @@ class App extends Component{
 export default App;
 
 
-function Home() {
-  return <Dashboard></Dashboard>;
-}
-
-function About() {
-  return <Formulaire></Formulaire>;
-}
 
 
 

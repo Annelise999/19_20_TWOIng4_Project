@@ -41,13 +41,14 @@ class Charte extends Component {
   constructor(props) {
     super(props);
 
+    const ID= props.ID
     var data = [];
     var self = this;
    
 
     axios.get('http://localhost:3000/api/sensor/temperature', {
       params: {
-        userId: "5ddb94c6fc13ae640c000015"
+        userId: props.ID
       }
     })
       .then(function (response) {

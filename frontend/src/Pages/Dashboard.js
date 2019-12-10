@@ -16,8 +16,11 @@ import Infos from '../Component/Infos/Infos';
 
 
 class Dashboard extends Component{
+
+
   render(){
-      
+    const ID = this.props.ID;
+    console.log(ID)
 return (
 <div class= "dashboard">
   <Container className="Container">
@@ -29,8 +32,8 @@ return (
 
 <br></br>
 
-<Row><Horloge></Horloge> <Counter></Counter></Row>
-<Row> <Infos > </Infos> <Thermo></Thermo> </Row>
+<Row><Horloge></Horloge> <Counter ID= {ID}></Counter></Row>
+<Row> <Infos ID= {ID}> </Infos> <Thermo ID= {ID}></Thermo> </Row>
 <Row><Galerie></Galerie> </Row>
 
 
@@ -42,9 +45,9 @@ return (
 
 <Col md= "5" sm=  "12" xs= "12">
 
-<Row><BarC></BarC></Row>
-<Row><LineChart></LineChart></Row>
-<Row> <Col lg="12"> <Cam></Cam> </Col>  </Row>
+<Row><BarC ID= {ID}></BarC></Row>
+<Row><LineChart ID= {ID}></LineChart></Row>
+<Row> <Col lg="12"> <Cam ID= {ID}></Cam> </Col>  </Row>
 
   
   
