@@ -17,13 +17,14 @@ class Thermo extends Component {
 
     constructor(props){
         super(props);
+        const ID= props.ID
         var self=this;
         var data = [];
 
 
         axios.get('http://localhost:3000/api/sensor/max', {
             params: {
-              userId:"5ddb94c6fc13ae640c000015"
+              userId: props.ID
             }
           } )
         .then(function (response) {

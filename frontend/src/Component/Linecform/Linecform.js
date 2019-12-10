@@ -19,6 +19,7 @@ class Linecform extends Component {
    
     constructor(props) {
         super(props);
+        const ID= props.ID
 
     var self=this;    
    
@@ -30,7 +31,7 @@ class Linecform extends Component {
 
     axios.get('http://localhost:3000/api/sensor', {
         params: {
-          userId:"5ddb94c6fc13ae640c000015"
+          userId: props.ID
         }
       } 
       )

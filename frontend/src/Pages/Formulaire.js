@@ -7,7 +7,6 @@ import BarCform from "../Component/BarCform/BarCform";
 import Camform from "../Component/Camform/Camform";
 import Perso from "../Component/Perso/Perso";
 import LineCform from "../Component/Linecform/Linecform";
-
 import Galerieform from '../Component/Galerieform/Galerieform';
 import Thermoform from '../Component/Thermoform/Thermoform';
 import Adduserform from '../Component/Userform/Adduserform';
@@ -18,6 +17,8 @@ import Changeuserform from '../Component/Userform/Changeuserform';
 
 class Formulaire extends Component{
   render(){
+    const ID = this.props.ID;
+
       
 return (
 <div class= "dashboard">
@@ -52,19 +53,19 @@ return (
 
 <Col sm=  "12" md="6" lg="4">
 
-<Camform > </Camform>
+<Camform ID= {ID}> </Camform>
 
 </Col>
 
 <Col sm=  "12" md="6" lg="4">
 
-<BarCform > </BarCform>
+<BarCform ID= {ID}> </BarCform>
 
 </Col>
 
 <Col sm=  "12" md="6" lg="4">
 
-<LineCform></LineCform>
+<LineCform ID= {ID}></LineCform>
 
 </Col>
 
@@ -77,7 +78,7 @@ return (
 
 <Col  sm=  "12" md="6" lg="4">
 
-<Thermoform > </Thermoform>
+<Thermoform ID= {ID}> </Thermoform>
 
 </Col>
  

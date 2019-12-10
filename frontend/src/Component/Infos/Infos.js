@@ -17,12 +17,15 @@ class Infos extends Component {
 
     constructor(props){
         super(props);
+        const ID= this.props.ID
+        
+       
         var self=this;
 
 
         axios.get('http://localhost:3000/api/user', {
             params: {
-              userId:"5ddb94c6fc13ae640c000015"
+              userId: props.ID
             }
           } )
         .then(function (response) {
@@ -41,6 +44,8 @@ class Infos extends Component {
     
     
     render() {
+        
+        
 
         return (
            

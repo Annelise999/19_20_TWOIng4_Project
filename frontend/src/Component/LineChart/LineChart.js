@@ -40,14 +40,17 @@ class LineChart extends Component {
 
     constructor(props){
       super(props);
-     
+
+     const ID= props.ID
+     console.log ("kiki");
+     console.log (ID);
      var data = [];
      var self=this;
    
      
      axios.get('http://localhost:3000/api/sensor/humidity', {
       params: {
-        userId: "5ddb94c6fc13ae640c000015"
+        userId: props.ID
       }
     })
       .then(function (response) {
