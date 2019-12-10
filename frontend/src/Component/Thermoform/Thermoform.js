@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../../App.css";
+import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
@@ -9,8 +10,8 @@ class Thermoform extends Component {
     state = {
         
         userliste: [],
-        _id:'',
-        creationDate:'',
+        
+        
         location:'',
         userID:''
 
@@ -22,28 +23,39 @@ class Thermoform extends Component {
         super(props);
         
     
-    this._idhandleChange = this._idhandleChange.bind(this);
+//    this._idhandleChange = this._idhandleChange.bind(this);
     this.locationhandleChange = this.locationhandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({userID: event.target.value});
-      }
-    datehandleChange(event) {
-        this.setState({creationDate: event.target.value});
-      }
+
+   
     locationhandleChange(event) {
         this.setState({location: event.target.value});
       }
-    _idhandleChange(event) {
-        this.setState({_id: event.target.value});
-      }
+  
 
 
       handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte pour la temperature' + this.state.name);
+    
         event.preventDefault();
+
+        var requestBody = {
+          location: this.state.location,
+          userId:"5ddb94c6fc13ae640c000016"
+     
+          }
+          
+          alert('Les informations ont bien été prises en compte');
+
+          axios.post('http://localhost:3000/api/sensor',requestBody)
+          .then(res => {
+          console.log(requestBody);
+          console.log(res.data);
+          }
+)
+
+
       }
 
 
@@ -55,19 +67,7 @@ class Thermoform extends Component {
                 <h3>Ajouter un capteur</h3>
                     
                     <form onSubmit={this.handleSubmit}>
-        <tr> 
-            <td>
-                    <label>
-                    User:
-                    <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "200%"}}>                  
-                  {this.state.userliste.map((user) => (
-                     <option value={user._id}> {user._id} </option>
-                ))}
-         
-                 </Input>
-                 </label>
-           </td>
-           </tr>
+ 
 
            <tr> 
             <td>         
