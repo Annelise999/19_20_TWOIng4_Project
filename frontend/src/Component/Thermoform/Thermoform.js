@@ -60,8 +60,7 @@ class Thermoform extends Component {
       }
 
 
-
-
+      
     render() {
         return (
             <div className="Formulaire">

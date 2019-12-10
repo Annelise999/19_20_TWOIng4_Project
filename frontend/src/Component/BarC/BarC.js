@@ -120,6 +120,92 @@ class Charte extends Component {
       })
 
   }
+
+
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.ID !== this.props.ID) {
+        var self = this;
+    var data = 0;
+    axios.get('http://localhost:3000/api/sensor/temperature', {
+      params: {
+        userId: this.props.ID
+      }
+    })
+      .then(function (response) {
+          data = [{
+          'name': "Jan",
+          'Température': response.data.Janvier
+        },
+        {
+          'name': "Fev",
+          'Température': response.data.Fevrier
+        },
+        {
+          'name': "Mar",
+          'Température': response.data.Mars
+        },
+        {
+          'name': "Avr",
+          'Température': response.data.Avril
+        },
+        {
+          'name': "Mai",
+          'Température': response.data.Mai
+        },
+        {
+          'name': "Juin",
+          'Température': response.data.Juin
+        },
+        {
+          'name': "Juil",
+          'Température': response.data.Juillet
+        },
+        {
+          'name': "Juin",
+          'Température': response.data.Juin
+        },
+        {
+          'name': "Juil",
+          'Température': response.data.Juillet
+        },
+        {
+          'name': "Aou",
+          'Température': response.data.Aout
+        },
+        {
+          'name': "Sep",
+          'Température': response.data.Septembre
+        },
+        {
+          'name': "Oct",
+          'Température': response.data.Octobre
+        },
+        {
+          'name': "Nov",
+          'Température': response.data.Novembre
+        },
+        {
+          'name': "Dec",
+          'Température': response.data.Decembre
+        }
+        ]
+
+      }).then(function () {
+        console.log(data);
+        self.setState({ data: data });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+  }
+    
+  }
+
+
+
   render() {
     return (
       <div className="widget droite" style={{ width: '100%', height: 300 }}>

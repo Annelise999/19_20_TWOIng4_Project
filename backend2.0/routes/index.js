@@ -8,6 +8,7 @@ const router = express.Router();
 //users
 router.post('/api/user',UserController.createUser);
 router.delete('/api/user',UserController.deleteUser);
+router.put('/api/user',UserController.upDateUser);
 router.get('/api/user',UserController.readCurrentUser);//get le current
 router.get('/api/user/all',UserController.readAllUsers);//tous les users 
 router.get('/api/user/sensors',UserController.readSensorsNumber);//nombre de sensors 

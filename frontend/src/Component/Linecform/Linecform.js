@@ -37,6 +37,7 @@ class Linecform extends Component {
       )
       .then(function (response) {
           self.setState({Sensorliste: response.data})
+          self.setState({selectedsensorliste:response.data[0]._id})
       })
       .catch(function (error) {
           console.log(error);
@@ -78,6 +79,33 @@ class Linecform extends Component {
    
       }
 
+
+      componentDidUpdate(prevProps) {
+
+        if (prevProps.ID !== this.props.ID) {
+            var self = this;
+        var data = 0;
+        axios.get('http://localhost:3000/api/sensor', {
+            params: {
+              userId: this.props.ID
+            }
+          } 
+          )
+          .then(function (response) {
+              self.setState({Sensorliste: response.data})
+              self.setState({selectedsensorliste:response.data[0]._id})
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+      
+    
+    
+        
+
+          }
+        
+      }
 
 
     render() {

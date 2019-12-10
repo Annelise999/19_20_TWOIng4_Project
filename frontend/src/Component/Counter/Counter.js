@@ -14,6 +14,8 @@ class Counter extends Component {
     constructor(props){
         super(props);
         const ID= props.ID
+        console.log("kaki");
+    console.log(ID)
 
         var self=this;
         var data = 0;
@@ -37,6 +39,27 @@ class Counter extends Component {
        }
     
 
+       componentDidUpdate(prevProps) {
+
+        if (prevProps.ID !== this.props.ID) {
+            var self = this;
+        var data = 0;
+        axios.get('http://localhost:3000/api/user/sensors', {
+            params: {
+              userId: this.props.ID
+            }
+          } )
+        .then(function (response) {
+            console.log(response.data);
+            data = response.data.nb_sensors;
+            self.setState({data : data});
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+          }
+        
+      }
 
 
 

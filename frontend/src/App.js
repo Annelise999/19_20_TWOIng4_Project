@@ -79,7 +79,7 @@ class App extends Component{
   
     
     <Col lg= "7" md= "8"  sm ="10" xs="9">
-    <Perso> </Perso>
+    <Perso ID={this.state.userID} functioncallback={this.ChangeUser}> </Perso>
     </Col>
 
   </Row> 

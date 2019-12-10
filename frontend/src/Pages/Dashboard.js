@@ -20,6 +20,7 @@ class Dashboard extends Component{
 
   render(){
     const ID = this.props.ID;
+    console.log("prout");
     console.log(ID)
 return (
 <div class= "dashboard">

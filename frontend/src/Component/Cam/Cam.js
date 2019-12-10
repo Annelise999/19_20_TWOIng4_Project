@@ -71,6 +71,44 @@ class Cam extends Component {
 
   }
 
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.ID !== this.props.ID) {
+        var self = this;
+    var data = 0;
+    axios.get('http://localhost:3000/api/sensor/pollution', {
+      params: {
+        userId: this.props.ID
+      }
+    })
+      .then(function (response) {
+        console.log(response)
+        data = [{
+          'name': response.data.type,
+          'value': response.data.value
+        },
+        {
+          'name': "Air pur",
+          'value': (100 - response.data.value)
+        }
+        ]
+
+      })
+      .then(function () {
+        console.log(data);
+        self.setState({ data: data });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+  }
+    
+  }
+
+
+
 
   render() {
 

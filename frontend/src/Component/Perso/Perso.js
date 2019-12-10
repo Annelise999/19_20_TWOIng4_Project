@@ -12,7 +12,7 @@ class Perso extends Component{
  
   state = {
     userliste: [],
-    selecteduserliste:''
+    selecteduserliste: this.props.ID
 
 }
 
@@ -20,7 +20,6 @@ constructor(props) {
   super(props);
   
 this.handleChange = this.handleChange.bind(this);
-this.handleSubmit = this.handleSubmit.bind(this);
 var self=this;
 
 axios.get('http://localhost:3000/api/user/all')
@@ -40,18 +39,8 @@ axios.get('http://localhost:3000/api/user/all')
 
   handleChange(event) {
     this.setState({selecteduserliste: event.target.value});
+    this.props.functioncallback(event.target.value)
   }
-
-  handleSubmit(event) {
-    alert('Les informations ont bien été prises en compte pour ' + this.state.userliste);
-    event.preventDefault();
-
-
-  }  
-  
-
-
-  
   
   render () {
       
@@ -69,16 +58,15 @@ axios.get('http://localhost:3000/api/user/all')
           
         <Col lg="4"md="12" sm="12" >
                   <p></p>         
-                  <form onSubmit={this.handleSubmit}>
+                 
 
-                  <Input type="select" name="select" id="exampleSelect" onChange={this.handleChange}>                  
+                  <Input type="select" name="select" id="exampleSelect" value={this.props.ID} onChange={this.handleChange}>                  
                   {this.state.userliste.map((user) => (
                 <option value={user._id}> {user._id} </option>
                 ))}
-         
                  </Input>
-                  <input type="submit" value="connexion" style={{marginLeft:"1em"}}/> 
-                  </form>
+               
+                 
 
         </Col>
                   

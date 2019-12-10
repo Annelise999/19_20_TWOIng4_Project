@@ -32,9 +32,36 @@ class UserController {
             res.json({success: false, msg: "Il manque l'id du user"});
         }else{
             try{
-                const {userId}=req.query.userId;
-                _.remove(user, ["_id", userId]);
-                //return res.json(user);
+                const userId=req.query.userId;
+                User.deleteOne({"_id":userId},(err)=>{
+                    if(err){
+                        res.json(err)
+                    }else{
+                        res.json("user delated")
+                    }
+                })
+               
+               
+            }
+            catch(err){
+                return res.json(err);
+            } 
+        }
+    }
+
+    upDateUser(req,res){
+        if (!req.body.id) {
+            res.json({success: false, msg: "Il manque l'id du user"});
+        }else{
+            try{
+               
+                User.updateOne({"_id": req.body.id},{"location": req.body.location, "personsInHouse": req.body.personsInHouse, "houseSize": req.body.houseSize} ,(err)=>{
+                    if(err){
+                        res.json(err)
+                    }else{
+                        res.json("user updated")
+                    }
+                })
                
                
             }

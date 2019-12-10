@@ -31,6 +31,7 @@ this.handleSubmit = this.handleSubmit.bind(this);
 axios.get('http://localhost:3000/api/user/all')
 .then(function (response) {
     self.setState({userliste: response.data})
+    self.setState({selecteduserliste:response.data[0]._id})
 })
 .catch(function (error) {
     console.log(error);
@@ -51,7 +52,11 @@ axios.get('http://localhost:3000/api/user/all')
             _id: this.state.selecteduserliste,
            }
 
-            axios.delete('http://localhost:3000/api/user',requestBody)
+            axios.delete('http://localhost:3000/api/user', {
+                params: {
+                  userId: this.state.selecteduserliste
+                }
+              } )
             .then(res => {
             console.log(requestBody);
             console.log(res.data);

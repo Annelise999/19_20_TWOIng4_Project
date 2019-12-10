@@ -124,6 +124,90 @@ class LineChart extends Component {
   }
 
 
+  componentDidUpdate(prevProps) {
+
+    if (prevProps.ID !== this.props.ID) {
+        var self = this;
+    var data = 0;
+    axios.get('http://localhost:3000/api/sensor/humidity', {
+      params: {
+        userId: this.props.ID
+      }
+    })
+      .then(function (response) {
+          data = [{
+          'name': "Jan",
+          'Humidity': response.data.Janvier
+        },
+        {
+          'name': "Fev",
+          'Humidity': response.data.Fevrier
+        },
+        {
+          'name': "Mar",
+          'Humidity': response.data.Mars
+        },
+        {
+          'name': "Avr",
+          'Humidity': response.data.Avril
+        },
+        {
+          'name': "Mai",
+          'Humidity': response.data.Mai
+        },
+        {
+          'name': "Juin",
+          'Humidity': response.data.Juin
+        },
+        {
+          'name': "Juil",
+          'Humidity': response.data.Juillet
+        },
+        {
+          'name': "Juin",
+          'Humidity': response.data.Juin
+        },
+        {
+          'name': "Juil",
+          'Humidity': response.data.Juillet
+        },
+        {
+          'name': "Aou",
+          'Humidity': response.data.Aout
+        },
+        {
+          'name': "Sep",
+          'Humidity': response.data.Septembre
+        },
+        {
+          'name': "Oct",
+          'Humidity': response.data.Octobre
+        },
+        {
+          'name': "Nov",
+          'Humidity': response.data.Novembre
+        },
+        {
+          'name': "Dec",
+          'Humidity': response.data.Decembre
+        }
+        ]
+
+      }).then(function () {
+        console.log(data);
+        self.setState({ data: data });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+  }
+      }
+    
+  
+
+
 
       render() {
 

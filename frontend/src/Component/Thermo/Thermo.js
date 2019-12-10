@@ -40,6 +40,29 @@ class Thermo extends Component {
 
 
 
+       componentDidUpdate(prevProps) {
+
+        if (prevProps.ID !== this.props.ID) {
+            var self = this;
+        var data = 0;
+        axios.get('http://localhost:3000/api/sensor/max', {
+            params: {
+              userId: this.props.ID
+            }
+          } )
+        .then(function (response) {
+
+            self.setState({temperature : response.data[1].value, humidity :response.data[0].value, airPollution: response.data[2].value});
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+
+       }
+    
+          }
+        
+      
     
     
     render() {
