@@ -52,31 +52,31 @@ class SensorController {
     async graphTemperature(req, res) {
 
         var data = {
-            "Janvier":0,
-            "Fevrier":0,
-            "Mars":0,
-            "Avril":0,
-            "Mai":0,
-            "Juin":0,
-            "Juillet":0,
-            "Aout":0,
-            "Septembre":0,
-            "Octobre":0,
-            "Novembre":0,
-            "Decembre":0,
-            "Jan":0,
-            "Fev":0,
-            "Mar":0,
-            "Avr":0,
-            "Ma":0,
-            "Jui":0,
-            "Juil":0,
-            "Aou":0,
-            "Sep":0,
-            "Oct":0,
-            "Nov":0,
-            "Dec":0
-            }
+            "Janvier": 0,
+            "Fevrier": 0,
+            "Mars": 0,
+            "Avril": 0,
+            "Mai": 0,
+            "Juin": 0,
+            "Juillet": 0,
+            "Aout": 0,
+            "Septembre": 0,
+            "Octobre": 0,
+            "Novembre": 0,
+            "Decembre": 0,
+            "Jan": 0,
+            "Fev": 0,
+            "Mar": 0,
+            "Avr": 0,
+            "Ma": 0,
+            "Jui": 0,
+            "Juil": 0,
+            "Aou": 0,
+            "Sep": 0,
+            "Oct": 0,
+            "Nov": 0,
+            "Dec": 0
+        }
 
         if (!req.query.userId) {
             return res.json({ success: false, msg: 'il faut l id du user' });
@@ -135,40 +135,40 @@ class SensorController {
                         })
                     });
 
-                    if(data.Jan > 0){
+                    if (data.Jan > 0) {
                         data.Janvier = data.Janvier / data.Jan
                     }
-                    if(data.Fev > 0){
+                    if (data.Fev > 0) {
                         data.Fevrier = data.Fevrier / data.Fev
                     }
-                    if(data.Mar > 0){
+                    if (data.Mar > 0) {
                         data.Mars = data.Mars / data.Mar
                     }
-                    if(data.Avr > 0){
+                    if (data.Avr > 0) {
                         data.Avril = data.Avril / data.Avr
                     }
-                    if(data.Ma > 0){
+                    if (data.Ma > 0) {
                         data.Mai = data.Mai / data.Ma
                     }
-                    if(data.Jui > 0){
+                    if (data.Jui > 0) {
                         data.Juin = data.Juin / data.Jui
                     }
-                    if(data.Juil > 0){
+                    if (data.Juil > 0) {
                         data.Juillet = data.Juillet / data.Juil
                     }
-                    if(data.Aou > 0){
+                    if (data.Aou > 0) {
                         data.Aout = data.Aout / data.Aou
                     }
-                    if(data.Sep > 0){
+                    if (data.Sep > 0) {
                         data.Septembre = data.Septembre / data.Sep
                     }
-                    if(data.Oct > 0){
+                    if (data.Oct > 0) {
                         data.Octobre = data.Octobre / data.Oct
                     }
-                    if(data.Nov > 0){
+                    if (data.Nov > 0) {
                         data.Novembre = data.Novembre / data.Nov
                     }
-                    if(data.Dec > 0){
+                    if (data.Dec > 0) {
                         data.Decembre = data.Decembre / data.Dec
                     }
 
@@ -181,31 +181,31 @@ class SensorController {
 
     graphHumidity(req, res) {
         var data = {
-            "Janvier":0,
-            "Fevrier":0,
-            "Mars":0,
-            "Avril":0,
-            "Mai":0,
-            "Juin":0,
-            "Juillet":0,
-            "Aout":0,
-            "Septembre":0,
-            "Octobre":0,
-            "Novembre":0,
-            "Decembre":0,
-            "Jan":0,
-            "Fev":0,
-            "Mar":0,
-            "Avr":0,
-            "Ma":0,
-            "Jui":0,
-            "Juil":0,
-            "Aou":0,
-            "Sep":0,
-            "Oct":0,
-            "Nov":0,
-            "Dec":0
-            }
+            "Janvier": 0,
+            "Fevrier": 0,
+            "Mars": 0,
+            "Avril": 0,
+            "Mai": 0,
+            "Juin": 0,
+            "Juillet": 0,
+            "Aout": 0,
+            "Septembre": 0,
+            "Octobre": 0,
+            "Novembre": 0,
+            "Decembre": 0,
+            "Jan": 0,
+            "Fev": 0,
+            "Mar": 0,
+            "Avr": 0,
+            "Ma": 0,
+            "Jui": 0,
+            "Juil": 0,
+            "Aou": 0,
+            "Sep": 0,
+            "Oct": 0,
+            "Nov": 0,
+            "Dec": 0
+        }
 
         if (!req.query.userId) {
             return res.json({ success: false, msg: 'il faut l id du user' });
@@ -264,40 +264,40 @@ class SensorController {
                         })
                     });
 
-                    if(data.Jan > 0){
+                    if (data.Jan > 0) {
                         data.Janvier = data.Janvier / data.Jan
                     }
-                    if(data.Fev > 0){
+                    if (data.Fev > 0) {
                         data.Fevrier = data.Fevrier / data.Fev
                     }
-                    if(data.Mar > 0){
+                    if (data.Mar > 0) {
                         data.Mars = data.Mars / data.Mar
                     }
-                    if(data.Avr > 0){
+                    if (data.Avr > 0) {
                         data.Avril = data.Avril / data.Avr
                     }
-                    if(data.Ma > 0){
+                    if (data.Ma > 0) {
                         data.Mai = data.Mai / data.Ma
                     }
-                    if(data.Jui > 0){
+                    if (data.Jui > 0) {
                         data.Juin = data.Juin / data.Jui
                     }
-                    if(data.Juil > 0){
+                    if (data.Juil > 0) {
                         data.Juillet = data.Juillet / data.Juil
                     }
-                    if(data.Aou > 0){
+                    if (data.Aou > 0) {
                         data.Aout = data.Aout / data.Aou
                     }
-                    if(data.Sep > 0){
+                    if (data.Sep > 0) {
                         data.Septembre = data.Septembre / data.Sep
                     }
-                    if(data.Oct > 0){
+                    if (data.Oct > 0) {
                         data.Octobre = data.Octobre / data.Oct
                     }
-                    if(data.Nov > 0){
+                    if (data.Nov > 0) {
                         data.Novembre = data.Novembre / data.Nov
                     }
-                    if(data.Dec > 0){
+                    if (data.Dec > 0) {
                         data.Decembre = data.Decembre / data.Dec
                     }
 
@@ -320,30 +320,30 @@ class SensorController {
                     return res.json(err)
                 } else {
                     await asyncForEach(sensors, async (sensor) => {
-   /* let measures = await Measure.aggregate( [
-                            { $match : {
-                                "sensorID":sensor._id,
-                                "type": "airPollution"
-                            }},
-                            { $sort : {
-                                "value": 1
-                            }}
-                        ] )*/
+                        /* let measures = await Measure.aggregate( [
+                                                 { $match : {
+                                                     "sensorID":sensor._id,
+                                                     "type": "airPollution"
+                                                 }},
+                                                 { $sort : {
+                                                     "value": 1
+                                                 }}
+                                             ] )*/
                         //let measures = await Measure.find({ "sensorID": sensor._id, "type": "airPollution" }).sort { "createdAt" : -1 } }.lean().exec();
-                let measures = await Measure.find({ "sensorID": sensor._id, "type": "airPollution" }).exec();
+                        let measures = await Measure.find({ "sensorID": sensor._id, "type": "airPollution" }).exec();
 
                         await asyncForEach(measures, async (measure) => {
-                          
+
                             data.push(measure);
-                            
+
                         })
                     });
-                    data.sort(function(a,b){
+                    data.sort(function (a, b) {
                         // Turn your strings into dates, and then subtract them
                         // to get a value that is either negative, positive, or zero.
                         return new Date(b.creationDate) - new Date(a.creationDate);
-                      });
-                      res.json(data[0]);
+                    });
+                    res.json(data[0]);
 
                 }
             });
@@ -352,36 +352,60 @@ class SensorController {
 
 
     max(req, res) {
-        var data = [];
+        var data1 = [];
+        var data2 = [];
+        var data3 = [];
+        var dataT = [];
         if (!req.query.userId) {
             return res.json({ success: false, msg: 'il faut l id du user' });
         } else {
+
             Sensor.find({ "userID": req.query.userId }, async (err, sensors) => {
                 if (err) {
                     return res.json(err)
                 } else {
                     await asyncForEach(sensors, async (sensor) => {
-  
-                let measures = await Measure.find({ "sensorID": sensor._id, "type": "airPollution" }).exec();
+
+                        let measures = await Measure.find({ "sensorID": sensor._id }).exec();
 
                         await asyncForEach(measures, async (measure) => {
-                          
-                            data.push(measure);
-                            
+                            if (measure.type== "humidity")
+                            {data1.push(measure);}
+                            else if (measure.type =="temperature")
+                            {data2.push(measure);}
+                            else if (measure.type =="airPollution")
+                            {data3.push(measure);}
+
+
                         })
                     });
-                    data.sort(function(a,b){
+                    data1.sort(function (a, b) {
                         // Turn your strings into dates, and then subtract them
                         // to get a value that is either negative, positive, or zero.
-                        return new Date(b.creationDate) - new Date(a.creationDate);
-                      });
-                      res.json(data[0]);
+                        return b.value - a.value;
+                    });
+                    data2.sort(function (a, b) {
+                        // Turn your strings into dates, and then subtract them
+                        // to get a value that is either negative, positive, or zero.
+                        return b.value - a.value;
+                    });
 
+                    data3.sort(function (a, b) {
+                        // Turn your strings into dates, and then subtract them
+                        // to get a value that is either negative, positive, or zero.
+                        return b.value - a.value;
+                    });
+                    dataT.push(data1[0]);
+                    dataT.push(data2[0]);
+                    dataT.push(data3[0]);
+
+                    res.json(dataT);
                 }
             });
+            
         }
     }
-    }
+}
 
 
 
