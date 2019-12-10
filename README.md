@@ -3,6 +3,9 @@
 
 Projet d'Anne-Lise Herve & Joseph Dupont
 
+Lien du Air Table : https://airtable.com/tblWgsBvufBMAKgcV/viwCwb87GLMAW2sVU?blocks=hide
+Lien du Figma : https://www.figma.com/files/project/4881404/User-interface
+
 
 Modules nécessaires:
 
@@ -19,7 +22,7 @@ Modules nécessaires:
     "reactstrap": "^8.2.0",
     "recharts": "^1.8.5"
 
-Lancement du projet :
+
 
 Lors de la premiere requete POST nous avons pas reussi a Linker avec les tables de la bdd données.
 
