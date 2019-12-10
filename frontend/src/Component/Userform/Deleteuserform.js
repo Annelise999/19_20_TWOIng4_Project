@@ -22,8 +22,20 @@ class Deleteuserform extends Component {
     constructor(props) {
     super(props);
     
+var self=this;
+
 this._idhandleChange = this._idhandleChange.bind(this);
 this.handleSubmit = this.handleSubmit.bind(this);
+
+axios.get('http://localhost:3000/api/user/all')
+.then(function (response) {
+    self.setState({userliste: response.data})
+})
+.catch(function (error) {
+    console.log(error);
+});
+
+
 }
    
    

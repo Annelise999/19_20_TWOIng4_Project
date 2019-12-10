@@ -5,7 +5,7 @@ import image1 from './image1.jpg';
 //import { Row,Col, Nav, input } from 'react-bootstrap';
 import { Container, Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
+import axios from 'axios';
  
 
 class Perso extends Component{
@@ -21,7 +21,22 @@ constructor(props) {
   
 this.handleChange = this.handleChange.bind(this);
 this.handleSubmit = this.handleSubmit.bind(this);
+var self=this;
+
+axios.get('http://localhost:3000/api/user/all')
+.then(function (response) {
+    self.setState({userliste: response.data})
+})
+.catch(function (error) {
+    console.log(error);
+});
 }
+
+
+
+
+
+
 
   handleChange(event) {
     this.setState({userliste: event.target.value});
@@ -30,9 +45,12 @@ this.handleSubmit = this.handleSubmit.bind(this);
   handleSubmit(event) {
     alert('Les informations ont bien été prises en compte pour ' + this.state.userliste);
     event.preventDefault();
+
+
   }  
   
-  
+
+
   
   
   render () {

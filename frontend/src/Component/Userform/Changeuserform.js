@@ -12,7 +12,8 @@ class Changeuserform extends Component {
     _id:'',
     location:'',
     personsInHouse:'',
-    houseSize:''
+    houseSize:'',
+
 
  
 }
@@ -20,10 +21,22 @@ class Changeuserform extends Component {
 constructor(props) {
     super(props);
     
+var self=this;
+
 this.handleChange = this.handleChange.bind(this);
 this.HousehandleChange = this.HousehandleChange.bind(this);
 this.locationhandleChange = this.locationhandleChange.bind(this);
 this.handleSubmit = this.handleSubmit.bind(this);
+
+axios.get('http://localhost:3000/api/user/all')
+.then(function (response) {
+    self.setState({userliste: response.data})
+})
+.catch(function (error) {
+    console.log(error);
+});
+
+
 }
 
 handleChange(event) {

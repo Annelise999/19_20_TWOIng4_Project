@@ -21,6 +21,10 @@ class Adduserform extends Component {
     this.HousehandleChange = this.HousehandleChange.bind(this);
     this.locationhandleChange = this.locationhandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+
+
+    
     }
     
     handleChange(event) {
