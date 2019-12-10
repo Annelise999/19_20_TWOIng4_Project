@@ -1,6 +1,8 @@
 var User = require('../model/User.model');
 var Sensor = require('../model/Sensor.model');
 
+const querystring = require('querystring');
+
 
 class UserController {
     createUser(req,res){
@@ -52,11 +54,11 @@ class UserController {
     }
     
     async readSensorsNumber(req,res){
-        if (!req.body.userId) {
+        if (!req.query.userId) {
             res.json({success: false, msg: 'Il manque l id du user'});
         }else{
             try{
-                let sensors = await Sensor.find({userID: req.body.userId}).countDocuments().lean().exec();
+                let sensors = await Sensor.find({userID: req.query.userId}).countDocuments().lean().exec();
                 return res.json({nb_sensors: sensors})
             }
             catch(err){
