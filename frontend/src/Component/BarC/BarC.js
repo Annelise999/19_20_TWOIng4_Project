@@ -8,67 +8,120 @@ import axios from 'axios';
 
 class Charte extends Component {
 
-        state = {
-         data : [
-          
-          {
-              name: 'Mai', Température: 18, 
-            },
-            {
-              name: 'Juin', Température: 19, 
-            },
-            {
-              name: 'Juil', Température: 21, 
-            },
-            {
-              name: 'Aou', Température: 22, 
-            },
-            {
-              name: 'Sep', Température: 25, 
-            },
-            {
-              name: 'Oct', Température: 30, 
-            },
-            {
-              name: 'Nov', Température: 29, 
-            },
-            {
-              name: 'Dec', Température: 29, 
-            }
-         ]
+  state = {
+    data: [
+
+      {
+        name: 'Mai', Température: 18,
+      },
+      {
+        name: 'Juin', Température: 19,
+      },
+      {
+        name: 'Juil', Température: 21,
+      },
+      {
+        name: 'Aou', Température: 22,
+      },
+      {
+        name: 'Sep', Température: 25,
+      },
+      {
+        name: 'Oct', Température: 30,
+      },
+      {
+        name: 'Nov', Température: 29,
+      },
+      {
+        name: 'Dec', Température: 29,
+      }
+    ]
+  }
+
+  constructor(props) {
+    super(props);
+
+    var data = [];
+    var self = this;
+   
+
+    axios.get('http://localhost:3000/api/sensor/temperature', {
+      params: {
+        userId: "5ddb94c6fc13ae640c000015"
+      }
+    })
+      .then(function (response) {
+          data = [{
+          'name': "Jan",
+          'Température': response.data.Janvier
+        },
+        {
+          'name': "Fev",
+          'Température': response.data.Fevrier
+        },
+        {
+          'name': "Mar",
+          'Température': response.data.Mars
+        },
+        {
+          'name': "Avr",
+          'Température': response.data.Avril
+        },
+        {
+          'name': "Mai",
+          'Température': response.data.Mai
+        },
+        {
+          'name': "Juin",
+          'Température': response.data.Juin
+        },
+        {
+          'name': "Juil",
+          'Température': response.data.Juillet
+        },
+        {
+          'name': "Juin",
+          'Température': response.data.Juin
+        },
+        {
+          'name': "Juil",
+          'Température': response.data.Juillet
+        },
+        {
+          'name': "Aou",
+          'Température': response.data.Aout
+        },
+        {
+          'name': "Sep",
+          'Température': response.data.Septembre
+        },
+        {
+          'name': "Oct",
+          'Température': response.data.Octobre
+        },
+        {
+          'name': "Nov",
+          'Température': response.data.Novembre
+        },
+        {
+          'name': "Dec",
+          'Température': response.data.Decembre
         }
+        ]
 
-        constructor(props){
-          super(props);
-         
-         var data = [];
-         var self=this;
-         var newdata;  
-         
-          axios.get('http://localhost:3000/api/temp')
-         .then(function (response) {
-             response.data.forEach(function(element) {
-                 newdata = {
-                     'name': element._id , 
-                     'Température': element.moyenne 
-                    
-                 }
-             data.push(newdata);
-         });
-         
-         }).then (function(){
-              console.log(data);
-              self.setState({data : data});
+      }).then(function () {
+        console.log(data);
+        self.setState({ data: data });
 
-         })
-         .catch(function (error) {
-           console.log(error);
-         })
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
 
-        }
-          render(){
+  }
+  render() {
     return (
-      <div className= "widget droite" style={{ width: '100%', height: 300 }}>
+      <div className="widget droite" style={{ width: '100%', height: 300 }}>
         <ResponsiveContainer>
           <ComposedChart
             width={500}
@@ -83,7 +136,7 @@ class Charte extends Component {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Température" barSize={20} fill="#413ea0" />           
+            <Bar dataKey="Température" barSize={20} fill="#413ea0" />
           </ComposedChart>
         </ResponsiveContainer>
       </div>
