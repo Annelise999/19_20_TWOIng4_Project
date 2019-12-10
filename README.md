@@ -1,9 +1,14 @@
+
 # Projet DashBoard
 
-Anne-Lise Herve & Joseph Dupont
+Projet d'Anne-Lise Herve & Joseph Dupont
+
+Lien du Air Table : https://airtable.com/tblWgsBvufBMAKgcV/viwCwb87GLMAW2sVU?blocks=hide
+
+Lien du Figma : https://www.figma.com/files/project/4881404/User-interface
 
 
-Modules necessaires:
+Modules nécessaires:
 
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
@@ -18,31 +23,62 @@ Modules necessaires:
     "reactstrap": "^8.2.0",
     "recharts": "^1.8.5"
 
-Lancement du projet :
+
 
 Lors de la premiere requete POST nous avons pas reussi a Linker avec les tables de la bdd données.
 
-Les requetes POST ont alors crées trois nouvelles tables : users, measures
+Les requetes POST ont alors créées trois nouvelles tables : users, measures, sensors.
 
-nous avons donc re-importer les tables du .zip dans ces trois nouvelles tables.
+Nous avons donc re-importé les tables du .zip dans ces trois nouvelles tables.
 
-
+# Lancement du Dashboard
 
 Lancer d'abord le dossier Backend 2.O sur le localhost 3000.
 
+    npm start //dans le dossier backend 2.0
 
 Puis lancer le Front sur un autre port (ex localhost 3001)
 
-Nous avons utiliser des extensions Cors permettant de lier le Front et le Back sans problemes.
+    npm start //dans le dossier frontend
 
+Nous avons utiliser des extensions Cors permettant de lier le Front et le Back sans problèmes.
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+et
+https://chrome.google.com/webstore/detail/cors-helper/jckpaobldaolbbchaeicopkcljcaiaka
 
 
 # Fonctionnement du Dashboard
 
+En arrivant arrivant sur le Dashboard, nous sommes directement sur la page Home.
+Dans le Haut de page de la page, on peut choisir quel user on affiche, les données des widgets s'adaptent à chaque user, grâce à la BDD.
+
+ - Widget Bar Chart : Moyenne par mois des données  "température" de tous les capteur du user.
+ - Widget Line Chart : Moyenne par mois des données  "humidité" de tous les capteur du user. 
+ - Widget Nombre de capteur fonctionnels : indique le nombre de sensor appartenant au user.
+ - Widget heure : indique l'heure en temps réel.
+ - Widget tableau info user : indique les informations du  user (pays, taille de la maison, nombre de personnes).
+ - Widget Gallerie : affiche les photos de la maison (non relié avec la bdd).
+ - Widget Camembert : affiche le dernier pourcentage d'air pollué rentré sur un des capteurs du user.
+ - Tableaux des capteurs :  valeur la plus haute jamais rentrée pour chaque type de capteur
 
 
 
+En cliquant sur le bouton de navigation Admin, on accède sur la page dans laquelle nous pouvons remplir des formulaire pour donner de la data à notre BDD.
+Quand on change de page, le user se remet à sa valeur par défaut.
+S'il on veut voir l'évolution des widgets, il faut donc rechoisir l'user pour lequel de la donnée a été ajouté.
 
+
+Les différents formulaire:
+
+ - Ajouter un User, en indiquant la nombre de personne dans la maison, sa localisation, et la taille de la maison.
+ - Supprimer un user en cherchant dans le menu déroulant son ID.
+ - Modifier un User et ses données.
+ - Ajouter une information sur la qualité de l'air.
+ - Ajouter une température pour un capteur de l'user.
+ - Ajouter une information sur l'humidité pour un capteur de l'user.
+ - Ajouter un capteur
+
+Tous les ajouts sont enregistrés à la date du moment.
 
 # Projet de fin de semestre
 
