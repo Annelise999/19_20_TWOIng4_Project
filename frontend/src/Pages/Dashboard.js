@@ -9,11 +9,10 @@ import BarC from "../Component/BarC/BarC";
 import Cam from "../Component/Cam/Cam";
 import Perso from "../Component/Perso/Perso";
 import Horloge from "../Component/Horloge/Horloge";
-import Bouton from '../Component/Bouton/Bouton';
 import LineChart from '../Component/LineChart/LineChart';
 import Counter from '../Component/Counter/Counter';
 import Thermo from '../Component/Thermo/Thermo';
-
+import Infos from '../Component/Infos/Infos';
 
 
 class Dashboard extends Component{
@@ -30,9 +29,10 @@ return (
 
 <br></br>
 
-<Row><Horloge></Horloge></Row>
-<Row><Galerie > </Galerie></Row>
-<Row><Cam></Cam></Row>
+<Row><Horloge></Horloge> <Counter></Counter></Row>
+<Row> <Infos > </Infos> <Thermo></Thermo> </Row>
+<Row><Galerie></Galerie> </Row>
+
 
 </Col>
 
@@ -44,11 +44,11 @@ return (
 
 <Row><BarC></BarC></Row>
 <Row><LineChart></LineChart></Row>
-<Row>
-<Col lg="12"> <Thermo></Thermo> </Col>  
+<Row> <Col lg="12"> <Cam></Cam> </Col>  </Row>
+
   
-  <Col lg= "12"> <Counter></Counter> </Col>
-  </Row>
+  
+  
 
 </Col>
 

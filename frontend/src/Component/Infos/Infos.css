@@ -1,0 +1,34 @@
+.tableau {
+    padding: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+
+}
+table {
+
+margin:auto;
+padding: auto;
+border: medium solid white;
+border-collapse: collapse;
+width: 50%;
+}
+
+th {
+font-family: Arial;
+font-weight: bold;
+font-size: 20px;
+border: thin solid white;
+width: 50%;
+padding: 1em;
+background-color:  #30343d;
+
+}
+td {
+   
+font-family: sans-serif;
+border: thin solid white;
+width: 50%;
+padding: 1em;
+text-align: center;
+background-color: #30343d;
+}

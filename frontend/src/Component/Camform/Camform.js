@@ -27,7 +27,7 @@ class Camform extends Component {
     
     axios.get('http://localhost:3000/api/sensor', {
         params: {
-          userId:"5ddb94c6fc13ae640c000016"
+          userId:"5ddb94c6fc13ae640c000015"
         }
       } 
       )
@@ -52,13 +52,10 @@ class Camform extends Component {
       
         event.preventDefault();
         var requestBody = {
-            value: this.state.Airpollution,
-            type: "Air pollution",
-            sensorId: this.state.Sensorliste
-    
+            type: "airPollution",
+            sensorId: this.state.selectedsensorliste,
+            value: this.state.Airpollution
      }
-
-     
 
      axios.post('http://localhost:3000/api/measure',requestBody)
      .then(res => {

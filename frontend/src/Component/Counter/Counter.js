@@ -16,13 +16,11 @@ class Counter extends Component {
         var self=this;
         var data = 0;
 
-        var requestBody = {
-            userId : "5ddb94c6fc13ae640c000016"
-        }
+        
 
         axios.get('http://localhost:3000/api/user/sensors', {
             params: {
-              userId:"5ddb94c6fc13ae640c000016"
+              userId:"5ddb94c6fc13ae640c000015"
             }
           } )
         .then(function (response) {
@@ -46,7 +44,7 @@ class Counter extends Component {
 
     
         return (
-            <div className= "widget droite">
+            <div className= "widget ">
                 <h4>Vous avez</h4> 
                 <h2> {this.state.data} </h2>
                 <h4>capteurs fonctionnels</h4> 

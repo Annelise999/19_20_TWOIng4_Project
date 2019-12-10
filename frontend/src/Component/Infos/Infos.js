@@ -1,15 +1,15 @@
 import React, { Component }  from 'react';
-import "./Thermo.css";
+import "./Infos.css";
 import '../Widget.css';
 import axios from 'axios';
 
  
-class Thermo extends Component {
+class Infos extends Component {
     
     state = {
-        temperature : 0,
-        humidity : 0,
-        airPollution : 0,
+        location : "",
+        personsinHouse : 0,
+        houseSize : "",
 
     }
 
@@ -18,17 +18,16 @@ class Thermo extends Component {
     constructor(props){
         super(props);
         var self=this;
-        var data = [];
 
 
-        axios.get('http://localhost:3000/api/sensor/max', {
+        axios.get('http://localhost:3000/api/user', {
             params: {
               userId:"5ddb94c6fc13ae640c000015"
             }
           } )
         .then(function (response) {
 
-            self.setState({temperature : response.data[1].value, humidity :response.data[0].value, airPollution: response.data[2].value});
+            self.setState({location : response.data.location, personsinHouse :response.data.personsInHouse, houseSize: response.data.houseSize});
         })
         .catch(function (error) {
           console.log(error);
@@ -48,7 +47,7 @@ class Thermo extends Component {
 
 
 
-    <div className= "widget tableau ">
+    <div className= "widget tableau">
         <table>
 
      <tr>
@@ -56,16 +55,16 @@ class Thermo extends Component {
        <th>Max Value</th>
    </tr>         
    <tr>
-       <td>Température</td>
-       <td>{this.state.temperature} °C</td>
+       <td>Country</td>
+       <td>{this.state.location} </td>
    </tr>
    <tr>
-       <td>Humidity</td>
-       <td>{this.state.humidity} %</td>
+       <td>Persons in House</td>
+       <td>{this.state.personsinHouse}</td>
    </tr>
      <tr>
-       <td>airPollution</td>
-       <td>{this.state.airPollution} %</td>
+       <td>House size</td>
+       <td>{this.state.houseSize} </td>
    </tr>
 </table>
         
@@ -76,4 +75,4 @@ class Thermo extends Component {
     }
 }
 
-export default Thermo;
+export default Infos;

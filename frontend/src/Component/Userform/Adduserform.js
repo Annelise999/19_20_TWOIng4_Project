@@ -43,7 +43,6 @@ class Adduserform extends Component {
         event.preventDefault();
 
         var requestBody = {
-          _id: this.state._id,
           location: this.state.location,
           personsInHouse: this.state.personsInHouse,
           houseSize: this.state.houseSize,
@@ -84,7 +83,7 @@ class Adduserform extends Component {
                     </label>
                     <label>
                     House Size:
-                    <input type="Text"   onChange={this.HouselocationhandleChange} style={{ width: "50%", marginLeft:"1em"}}/>
+                    <input type="Text"   onChange={this.HousehandleChange} style={{ width: "50%", marginLeft:"1em"}}/>
                     </label>
 
               

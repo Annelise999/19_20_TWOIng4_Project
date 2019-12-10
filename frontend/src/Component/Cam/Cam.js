@@ -43,7 +43,7 @@ class Cam extends Component {
 
     axios.get('http://localhost:3000/api/sensor/pollution', {
       params: {
-        userId: "5ddb94c6fc13ae640c000016"
+        userId: "5ddb94c6fc13ae640c000015"
       }
     })
       .then(function (response) {
@@ -75,7 +75,7 @@ class Cam extends Component {
 
     return (
 
-      <div className="widget" >
+      <div className="widget droite" >
 
         <h4 class="air"> QUALITE DE L'AIR</h4>
 

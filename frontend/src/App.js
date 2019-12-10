@@ -5,7 +5,6 @@ import './App.css';
 import Dashboard from './Pages/Dashboard';
 import Formulaire from './Pages/Formulaire';
 import Perso from "./Component/Perso/Perso";
-import Bouton from"./Component/Bouton/Bouton";
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,7 +34,7 @@ class App extends Component{
   <div className= "Hautdepage">
    <Row> 
    
-  <Col lg="4"  className="d-none d-sm-none d-md-block "> 
+  <Col lg="2"  className="d-none d-sm-none d-md-block "> 
   <p></p>
   <Nav className="mr-auto">
       <Nav.Link href="/">Home</Nav.Link>
@@ -44,7 +43,7 @@ class App extends Component{
   </Nav> 
   </Col> 
 
-  <Col xs="1" sm="1" md="1" className ="d-md-none d-sm-block ">
+  <Col sm="2" className ="d-md-none d-sm-block ">
     <NavDropdown title="Menu" id="basic-nav-dropdown">
         <NavDropdown.Item href="/">Home</NavDropdown.Item>
         <NavDropdown.Item href="/admin">Admin</NavDropdown.Item>
@@ -53,7 +52,7 @@ class App extends Component{
   
   
     
-    <Col lg= "8" md= "11"  sm ="11"xs="11">
+    <Col lg= "10" md= "10"  sm ="10"xs="10">
     <Perso> </Perso>
     </Col>
 

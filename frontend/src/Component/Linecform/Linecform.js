@@ -30,7 +30,7 @@ class Linecform extends Component {
 
     axios.get('http://localhost:3000/api/sensor', {
         params: {
-          userId:"5ddb94c6fc13ae640c000016"
+          userId:"5ddb94c6fc13ae640c000015"
         }
       } 
       )
@@ -62,7 +62,7 @@ class Linecform extends Component {
         var requestBody = {
             value: this.state.Humidity,
             type: "humidity",
-            sensorId: this.state.Sensorliste
+            sensorId: this.state.selectedsensorliste
     
      }
 

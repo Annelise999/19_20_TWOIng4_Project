@@ -47,11 +47,11 @@ class UserController {
 
 
     async readCurrentUser(req,res){
-        if (!req.body.userId) {
+        if (!req.query.userId) {
             res.json({success: false, msg: 'Il manque l id du user'});
         }else{
             try{
-                let user = await User.findById(req.body.userId).lean().exec();
+                let user = await User.findById(req.query.userId).lean().exec();
                 return res.json(user); 
              
             }
