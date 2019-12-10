@@ -1,27 +1,70 @@
 import React, { Component } from 'react';
 import "../../App.css";
+import { Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import axios from 'axios';
 
 
 class Camform extends Component {
 
+
+    state = {
+    Sensorliste:[],
+    Airpollution:''
+}
+
+
+
     constructor(props) {
         super(props);
-        this.state = {
-            value: '',
-            pourcentage:''
-    };
-
-    this.handleChange = this.handleChange.bind(this);
+        var self=this;    
+   
+        this._idhandleChange = this._idhandleChange.bind(this);
+        this.valeurhandleChange = this.valeurhandleChange.bind(this);
+    
     this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    
+    axios.get('http://localhost:3000/api/sensor', {
+        params: {
+          userId:"5ddb94c6fc13ae640c000016"
+        }
+      } 
+      )
+      .then(function (response) {
+          self.setState({Sensorliste: response.data})
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
 
-    handleChange(event) {
-        this.setState({value: event.target.value, pourcentage:event.target.pourcentage});
-      }
+}
+
+
+    _idhandleChange(event) {
+    this.setState({Sensorliste:event.target.value});
+    }
+    valeurhandleChange(event) {
+    this.setState({Airpollution:event.target.value});
+    }
     
       handleSubmit(event) {
-        alert('Les informations ont bien été prises en compte pour ' + this.state.value);
+      
         event.preventDefault();
+        var requestBody = {
+            value: this.state.Airpollution,
+            type: "Air pollution",
+            sensorId: this.state.Sensorliste
+    
+     }
+
+     
+
+     axios.post('http://localhost:3000/api/measure',requestBody)
+     .then(res => {
+     console.log(requestBody);
+     console.log(res.data);
+     }
+   )
       }
 
 
@@ -36,13 +79,13 @@ class Camform extends Component {
         <tr> 
             <td>  
                     <label>
-                    Choisissez le composant:
-                    <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="N2">Azote N2</option>
-                        <option value="O2">Dioxygène O2</option>
-                        <option value="Dioxyde de Carbone">CO2</option>
-                        <option value="Autre Gaz">Autre Gaz</option>
-                    </select>
+                    Sensor id :
+                <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "70%"}}>                  
+                  
+                  {this.state.Sensorliste.map((sensor) => (
+                     <option value={sensor._id}> {sensor._id} </option>
+                ))}
+            </Input>
                     </label>
             </td>
             </tr>
@@ -50,8 +93,8 @@ class Camform extends Component {
             <tr> 
             <td>
                     <label>
-                    Pourcentage:
-                    <input type="number" value={this.state.pourcentage} onChange={this.handleChange} style={{width:"70%"}}/>
+                    Pourcentage d'air pollué:
+                    <input type="number"  onChange={this.valeurhandleChange} style={{width:"70%"}}/>
                     </label>
                 </td>
                 </tr>

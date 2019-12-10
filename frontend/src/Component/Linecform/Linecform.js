@@ -11,9 +11,6 @@ class Linecform extends Component {
     state = {
        
         Sensorliste:[],
-        Jour: '',
-        Mois:'',
-        Annee:'',
         Humidity:''
 
 
@@ -21,12 +18,29 @@ class Linecform extends Component {
    
     constructor(props) {
         super(props);
-        
+    var self=this;    
    
     this._idhandleChange = this._idhandleChange.bind(this);
     this.valeurhandleChange = this.valeurhandleChange.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+
+
+    axios.get('http://localhost:3000/api/sensor', {
+        params: {
+          userId:"5ddb94c6fc13ae640c000016"
+        }
+      } 
+      )
+      .then(function (response) {
+          self.setState({Sensorliste: response.data})
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
+  
+
+
     }
 
 
@@ -44,17 +58,15 @@ class Linecform extends Component {
         event.preventDefault();
 
         var requestBody = {
-            valeur: this.state.Humidity,
-            jour: this.state.Jour,
-            mois: this.state.Mois,
-            annee: this.state.Annee,
+            value: this.state.Humidity,
+            type: "humidity",
+            sensorId: this.state.Sensorliste
     
      }
 
-     alert(this.state.Humidity)
      alert('Les informations ont bien été prises en compte pour ' + this.state.Mois);
 
-     axios.post('http://localhost:3000/api/hum',requestBody)
+     axios.post('http://localhost:3000/api/measure',requestBody)
      .then(res => {
      console.log(requestBody);
      console.log(res.data);
@@ -76,7 +88,7 @@ class Linecform extends Component {
             <td>   
                  <label>
                 Sensor id :
-                <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "200%"}}>                  
+                <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "70%"}}>                  
                   
                   {this.state.Sensorliste.map((sensor) => (
                      <option value={sensor._id}> {sensor._id} </option>

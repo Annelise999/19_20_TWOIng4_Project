@@ -19,8 +19,8 @@ class Deleteuserform extends Component {
     
     
     
-    constructor(props) {
-    super(props);
+constructor(props) {
+super(props);
     
 var self=this;
 

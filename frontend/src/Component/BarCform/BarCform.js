@@ -9,19 +9,36 @@ class BarCform extends Component {
     
   state = {
     Sensorliste:[],
-    Temperature:''
+    Temperature:'',
+   
 
 }
   
   constructor(props) {
         super(props);
         
-    
+    var self=this;
     
   
     this._idhandleChange = this._idhandleChange.bind(this);
     this.valeurhandleChange = this.valeurhandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    
+    
+    axios.get('http://localhost:3000/api/sensor', {
+      params: {
+        userId:"5ddb94c6fc13ae640c000016"
+      }
+    } 
+    )
+    .then(function (response) {
+        self.setState({Sensorliste: response.data})
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+
     }
 
    
@@ -30,6 +47,8 @@ class BarCform extends Component {
       _idhandleChange(event) {
         this.setState({Sensorlist: event.target.value});
       }
+
+     
       valeurhandleChange(event) {
         this.setState({Temperature :event.target.value});
       }
@@ -38,16 +57,15 @@ class BarCform extends Component {
     handleSubmit(event) {
       event.preventDefault();
         var requestBody = {
-                valeur: this.state.Temperature,
-                jour: this.state.Jour,
-                mois: this.state.Mois,
-                annee: this.state.Annee,
-        
+                value: this.state.Temperature,
+                type: "temperature",
+                sensorId: this.state.Sensorliste
+           
          }
          
          alert('Les informations ont bien été prises en compte');
 
-        axios.post('http://localhost:3000/api/temp',requestBody)
+        axios.post('http://localhost:3000/api/measure',requestBody)
         .then(res => {
         console.log(requestBody);
         console.log(res.data);
@@ -69,7 +87,7 @@ class BarCform extends Component {
                 <td>
                   <label>
                 Sensor id :
-                <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "200%"}}>                  
+                <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "70%"}}>                  
                   {this.state.Sensorliste.map((sensor) => (
                      <option value={sensor._id}> {sensor._id} </option>
                 ))}
@@ -81,8 +99,10 @@ class BarCform extends Component {
                 <td> 
                     <label>
                     Température:   
-                    <input type="Number" value={this.state.Temperature} onChange={this.valeurhandleChange} style={{ width: "70%" }}/>
+                    <input type="Number"  onChange={this.valeurhandleChange} style={{ width: "70%" }}/>
                     </label>
+
+                  
                 </td>
             </tr>   
                     
