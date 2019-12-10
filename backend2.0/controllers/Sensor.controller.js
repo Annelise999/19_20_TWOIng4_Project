@@ -41,21 +41,32 @@ class SensorController {
         }
     }
     graphTemperature(req,res){
-        if (!req.body.userId) {
-            res.json({success: false, msg: 'il faut l id du user'});
-        }else {
-            Sensor.find({"userID":req.body.userId},(err,sensors)=>{
-                sensors.forEach(function(sensor){
-                    Measure.find({"sensorID":sensor._id,"type":"temperature"},(err,measures)=>{
-                        measures.forEach(function(measure){
-                            console.log(measure.creationDate.getMonth()+1);
-                        })
-                        res.json(measures)
-                    })
-                  });
-            });
-        }
-    }
+        var i = 0;
+                if (!req.body.userId) {
+                    return res.json({success: false, msg: 'il faut l id du user'});
+                }else {
+                    Sensor.find({"userID":req.body.userId},(err,sensors)=>{
+                        if(err){
+                            return res.json(err)
+                        }else {
+                            sensors.forEach(function(sensor){
+                                Measure.find({"sensorID":sensor._id,"type":"temperature"},(err,measures)=>{
+                                    if (err){
+                                        return res.json(err)
+                                    }
+                                    else{ 
+            
+                                        measures.forEach(function(measure){
+i++;
+        })
+                                    }   
+                                })
+                              });
+                            return res.json(i)
+                        }
+                    });
+                }
+            }
     graphHumidity(req,res){
         res.json("ok");
     }
