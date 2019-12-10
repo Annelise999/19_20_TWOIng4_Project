@@ -3,7 +3,6 @@ var Sensor = require('../model/Sensor.model');
 var Measure = require('../model/Measure.model');
 const querystring = require('querystring');
 
-
 async function asyncForEach(array, callback) {
     for (let index = 0; index < array.length; index++) {
         await callback(array[index], index, array);
@@ -35,11 +34,11 @@ class SensorController {
         }
     }
     async readSensors(req, res) {
-        if (!req.body.userId) {
+        if (!req.query.userId) {
             res.json({ success: false, msg: 'il faut l id du user' });
         } else {
             try {
-                let sensors = await Sensor.find({ userID: req.body.userId }).lean().exec();
+                let sensors = await Sensor.find({ userID: req.query.userId }).lean().exec();
                 return res.json(sensors);
 
             }

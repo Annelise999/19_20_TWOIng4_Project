@@ -12,7 +12,9 @@ class Changeuserform extends Component {
     _id:'',
     location:'',
     personsInHouse:'',
-    houseSize:''
+    houseSize:'',
+    selecteduserliste:''
+
 
  
 }
@@ -20,16 +22,30 @@ class Changeuserform extends Component {
 constructor(props) {
     super(props);
     
+var self=this;
+
 this.handleChange = this.handleChange.bind(this);
 this.HousehandleChange = this.HousehandleChange.bind(this);
 this.locationhandleChange = this.locationhandleChange.bind(this);
 this.handleSubmit = this.handleSubmit.bind(this);
+
+axios.get('http://localhost:3000/api/user/all')
+.then(function (response) {
+    self.setState({userliste: response.data})
+})
+.catch(function (error) {
+    console.log(error);
+});
+
+
 }
 
 handleChange(event) {
+    this.setState({selecteduserliste: event.target.value});
+  }
+peoplehandleChange(event) {
     this.setState({personsInHouse: event.target.value});
   }
-
 locationhandleChange(event) {
     this.setState({location: event.target.value});
   }
@@ -43,7 +59,7 @@ HousehandleChange(event) {
                 event.preventDefault();
 
                 var requestBody = {
-                    _id: this.state._id,
+                    _id: this.state.selecteduserliste,
                     location: this.state.location,
                     personsInHouse: this.state.personsInHouse,
                     houseSize: this.state.houseSize,
@@ -92,7 +108,7 @@ HousehandleChange(event) {
 
                     <label>
                     People in House :
-                    <input type="number"  onChange={this.handleChange} style={{width:"30%", marginLeft:"1em"}} />
+                    <input type="number"  onChange={this.peoplehandleChange} style={{width:"30%", marginLeft:"1em"}} />
                     </label>
                     <label>
                     Location
