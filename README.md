@@ -5,12 +5,41 @@ Anne-Lise Herve & Joseph Dupont
 
 Modules necessaires:
 
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.11.0",
+    "react-image-gallery": "^0.9.1",
+    "react-live-clock": "^3.1.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "reactstrap": "^8.2.0",
+    "recharts": "^1.8.5"
 
 Lancement du projet :
 
-Lancer d'abord le dossier Backend sur le localhost 3000.
+Lors de la premiere requete POST nous avons pas reussi a Linker avec les tables de la bdd données.
+
+Les requetes POST ont alors crées trois nouvelles tables : users, measures
+
+nous avons donc re-importer les tables du .zip dans ces trois nouvelles tables.
+
+
+
+Lancer d'abord le dossier Backend 2.O sur le localhost 3000.
+
 
 Puis lancer le Front sur un autre port (ex localhost 3001)
+
+Nous avons utiliser des extensions Cors permettant de lier le Front et le Back sans problemes.
+
+
+
+# Fonctionnement du Dashboard
+
+
 
 
 
