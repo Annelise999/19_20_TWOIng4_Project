@@ -34,7 +34,7 @@ class App extends Component{
   <div className= "Hautdepage">
    <Row> 
    
-  <Col lg="2"  className="d-none d-sm-none d-md-block "> 
+  <Col lg="5" md="4"  className="d-none d-sm-none d-md-block "> 
   <p></p>
   <Nav className="mr-auto">
       <Nav.Link href="/">Home</Nav.Link>
@@ -43,7 +43,8 @@ class App extends Component{
   </Nav> 
   </Col> 
 
-  <Col sm="2" className ="d-md-none d-sm-block ">
+  <Col sm="2" xs="3"className ="d-md-none d-sm-block ">
+  <p></p>
     <NavDropdown title="Menu" id="basic-nav-dropdown">
         <NavDropdown.Item href="/">Home</NavDropdown.Item>
         <NavDropdown.Item href="/admin">Admin</NavDropdown.Item>
@@ -52,7 +53,7 @@ class App extends Component{
   
   
     
-    <Col lg= "10" md= "10"  sm ="10"xs="10">
+    <Col lg= "7" md= "8"  sm ="10" xs="9">
     <Perso> </Perso>
     </Col>
 

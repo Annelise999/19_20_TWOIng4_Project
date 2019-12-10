@@ -7,7 +7,7 @@ import BarCform from "../Component/BarCform/BarCform";
 import Camform from "../Component/Camform/Camform";
 import Perso from "../Component/Perso/Perso";
 import LineCform from "../Component/Linecform/Linecform";
-import Bouton from '../Component/Bouton/Bouton';
+
 import Galerieform from '../Component/Galerieform/Galerieform';
 import Thermoform from '../Component/Thermoform/Thermoform';
 import Adduserform from '../Component/Userform/Adduserform';

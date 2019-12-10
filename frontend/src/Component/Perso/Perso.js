@@ -59,15 +59,15 @@ axios.get('http://localhost:3000/api/user/all')
        <div className="Profil" >
           <Row>
           
-          <Col lg="2" className="d-none  d-lg-block">
+          <Col lg="5" className="d-none  d-lg-block">
           <img class="roundedImage" src= {image1} alt="photo de moi"/>
           </Col>
           
-          <Col lg="5" md="8" sm="10">
-          <h4> MOTHER OF DRAGONS</h4>
+          <Col lg="3" md="6" className="d-none   d-lg-block">
+          <h4> Herve's House</h4>
         </Col>
           
-        <Col lg=""md="3" >
+        <Col lg="4"md="12" sm="12" >
                   <p></p>         
                   <form onSubmit={this.handleSubmit}>
 
@@ -80,7 +80,7 @@ axios.get('http://localhost:3000/api/user/all')
                   <input type="submit" value="connexion" style={{marginLeft:"1em"}}/> 
                   </form>
 
-                  </Col>
+        </Col>
                   
         </Row>
         
