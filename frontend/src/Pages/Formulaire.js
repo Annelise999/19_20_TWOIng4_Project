@@ -10,6 +10,9 @@ import LineCform from "../Component/Linecform/Linecform";
 import Bouton from '../Component/Bouton/Bouton';
 import Galerieform from '../Component/Galerieform/Galerieform';
 import Thermoform from '../Component/Thermoform/Thermoform';
+import Adduserform from '../Component/Userform/Adduserform';
+import Deleteuserform from '../Component/Userform/Deleteuserform';
+import Changeuserform from '../Component/Userform/Changeuserform';
 
 
 
@@ -20,7 +23,27 @@ return (
 <div class= "dashboard">
 <Container className="Container">
 
- 
+ <Row>
+
+ <Col sm=  "12" md="6" lg="4">
+
+<Adduserform></Adduserform>
+
+</Col>
+
+<Col sm=  "12" md="6" lg="4">
+
+<Deleteuserform></Deleteuserform>
+
+</Col>
+
+<Col sm=  "12" md="6" lg="4">
+
+<Changeuserform></Changeuserform>
+
+</Col>
+
+ </Row>
   
 
 
@@ -46,19 +69,19 @@ return (
 </Col>
 
 
-<Col  sm=  "12" md="6" >
+<Col  sm=  "12" md="6" lg="4" >
 
 <Galerieform></Galerieform>
 
 </Col>
 
-<Col  sm=  "12" md="6">
+<Col  sm=  "12" md="6" lg="4">
 
 <Thermoform > </Thermoform>
 
 </Col>
  
-  
+
   
   
   

@@ -34,32 +34,36 @@ class App extends Component{
         
   <div className= "Hautdepage">
    <Row> 
-    <Col lg= "8" md= "7" xs="6">
-    <Perso> </Perso>
-    </Col>
-
-  <Col lg="4" md="5" className="d-none d-sm-none d-md-block "> 
+   
+  <Col lg="4"  className="d-none d-sm-none d-md-block "> 
   <p></p>
   <Nav className="mr-auto">
       <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/about">Admin</Nav.Link>
+      <Nav.Link href="/admin">Admin</Nav.Link>
       
   </Nav> 
-    </Col>
-    
-    <Col xs="4" sm="4" md="2" className ="d-md-none d-sm-block ">
+  </Col> 
+
+  <Col xs="1" sm="1" md="1" className ="d-md-none d-sm-block ">
     <NavDropdown title="Menu" id="basic-nav-dropdown">
         <NavDropdown.Item href="/">Home</NavDropdown.Item>
-        <NavDropdown.Item href="/about">Admin</NavDropdown.Item>
-        
-       
-      </NavDropdown>
+        <NavDropdown.Item href="/admin">Admin</NavDropdown.Item>
+    </NavDropdown>
     </Col>
-  </Row>  </div>
+  
+  
+    
+    <Col lg= "8" md= "11"  sm ="11"xs="11">
+    <Perso> </Perso>
+    </Col>
+
+  </Row> 
+    
+     </div>
 
 
         <Switch>
-          <Route path="/about">
+          <Route path="/admin">
             <About />
           </Route>
           <Route path="/">

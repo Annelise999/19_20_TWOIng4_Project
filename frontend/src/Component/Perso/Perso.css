@@ -3,28 +3,35 @@
     -webkit-border-radius:50px;
     -moz-border-radius:50px;
     border-radius:50px;
-    width:90px;
-    height:90px;
+    width:60px;
+    height:60px;
+    float: right;
 }
 .Profil {
-    margin-left:3em;
+    margin-right:3em;
   
 }
 
-.Profil > img, h3{
+.Profil > img, h4, form{
 
     display: inline-block;
 }
 
-.Profil  h3{
+.Profil  h4{
     margin-top: 1rem;
-    margin-left: 1em;
-    float: left;
+   
+    float: right;
     font:20%;
 }
 
 .Profil  img{
-    margin-left: 1em;
+    margin-right: 1em;
+    float: right;
+}
+
+.Profil  form{
+    margin-right: 1em;
+    float: right;
 }
 
 .Profil  Nav{

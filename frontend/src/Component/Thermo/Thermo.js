@@ -26,6 +26,10 @@ class Thermo extends Component {
        <td>Humidity</td>
        <td>30%</td>
    </tr>
+     <tr>
+       <td>Air pollution</td>
+       <td>10%</td>
+   </tr>
 </table>
         
     </div>
