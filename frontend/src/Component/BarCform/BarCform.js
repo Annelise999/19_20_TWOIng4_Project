@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import "../../App.css";
+import { Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import axios from 'axios';
 
 class BarCform extends Component {
     
     
   state = {
-    Jour: '',
-    Mois: '',
-    Annee: '',
+    Sensorliste:[],
     Temperature:''
 
 }
@@ -18,23 +18,17 @@ class BarCform extends Component {
         
     
     
-    this.jourhandleChange = this.jourhandleChange.bind(this);
-    this.moishandleChange = this.moishandleChange.bind(this);
-    this.anneehandleChange = this.anneehandleChange.bind(this);
+  
+    this._idhandleChange = this._idhandleChange.bind(this);
     this.valeurhandleChange = this.valeurhandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     }
 
    
    
-      jourhandleChange(event) {
-        this.setState({Jour: event.target.value});
-      }
-      moishandleChange(event) {
-        this.setState({Mois: event.target.value});
-      }
-      anneehandleChange(event) {
-        this.setState({Annee: event.target.value});
+ 
+      _idhandleChange(event) {
+        this.setState({Sensorlist: event.target.value});
       }
       valeurhandleChange(event) {
         this.setState({Temperature :event.target.value});
@@ -73,22 +67,15 @@ class BarCform extends Component {
                     
             <tr> 
                 <td>
-                    <label>
-                    Jour:
-                    <input type="Number" value={this.state.Jour}  onChange={this.jourhandleChange} style={{ width: "25%" }}/>
-                    </label>
-               
-                    <label>
-                    Mois:
-                    <input type="text"   onChange={this.moishandleChange} style={{ width: "25%" }}/>
-                    </label>
-                
-            
-     
-                    <label>
-                    Année:
-                    <input type="Number" value={this.state.Annee}  onChange={this.anneehandleChange} style={{ width: "30%" }}/>
-                    </label>
+                  <label>
+                Sensor id :
+                <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "200%"}}>                  
+                  {this.state.Sensorliste.map((sensor) => (
+                     <option value={sensor._id}> {sensor._id} </option>
+                ))}
+            </Input>
+            </label>
+
                 </td></tr>
              <tr>   
                 <td> 

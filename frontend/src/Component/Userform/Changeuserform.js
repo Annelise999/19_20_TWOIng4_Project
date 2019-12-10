@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import "../../App.css";
 import axios from 'axios';
+import { Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Changeuserform extends Component {
     
      
   state = {
+    userliste:[],
     _id:'',
     location:'',
     personsInHouse:'',
@@ -73,12 +76,12 @@ HousehandleChange(event) {
             <td>     
                
                     User à modifier:
-                    <select  onChange={this.handleChange}>
-                                <option value="N2">Azote N2</option>
-                                <option value="O2">Dioxygène O2</option>
-                                <option value="Dioxyde de Carbone">CO2</option>
-                                <option value="Autre Gaz">Autre Gaz</option>
-                    </select>
+                    <Input type="select" name="select" id="exampleSelect" onChange={this.handleChange} style={{width:"50%"}}>                  
+                  {this.state.userliste.map((user) => (
+                <option value={user._id}> {user._id} </option>
+                ))}
+         
+                 </Input>
 
         </td>
     </tr> 

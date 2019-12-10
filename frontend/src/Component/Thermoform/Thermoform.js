@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import "../../App.css";
+import { Container, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Thermoform extends Component {
   
   
     state = {
+        
+        userliste: [],
         _id:'',
         creationDate:'',
         location:'',
@@ -17,8 +21,7 @@ class Thermoform extends Component {
     constructor(props) {
         super(props);
         
-    this.handleChange = this.handleChange.bind(this);
-    this.datehandleChange = this.datehandleChange.bind(this);
+    
     this._idhandleChange = this._idhandleChange.bind(this);
     this.locationhandleChange = this.locationhandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,32 +57,26 @@ class Thermoform extends Component {
                     <form onSubmit={this.handleSubmit}>
         <tr> 
             <td>
-                    
+                    <label>
                     User:
-                    <select  onChange={this.handleChange}>
-                                <option value="N2">Azote N2</option>
-                                <option value="O2">Dioxygène O2</option>
-                                <option value="Dioxyde de Carbone">CO2</option>
-                                <option value="Autre Gaz">Autre Gaz</option>
-                    </select>
-                    
+                    <Input type="select" name="select" id="exampleSelect" onChange={this._idhandleChange} style={{ width: "200%"}}>                  
+                  {this.state.userliste.map((user) => (
+                     <option value={user._id}> {user._id} </option>
+                ))}
+         
+                 </Input>
+                 </label>
            </td>
            </tr>
 
            <tr> 
             <td>         
-                    <label>
-                    creation date :
-                    <input type="date"  onChange={this.datehandleChange} style={{width:"70%", marginLeft:"1em"}} />
-                    </label>
+                   
                     <label>
                     Location
                     <input type="Text"   onChange={this.locationhandleChange} style={{ width: "50%", marginLeft:"1em"}}/>
                     </label>
-                    <label>
-                    capteur id:
-                    <input type="Text"   onChange={this._idlocationhandleChange} style={{ width: "50%", marginLeft:"1em"}}/>
-                    </label>
+                  
 
               
                </td>
