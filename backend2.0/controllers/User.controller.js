@@ -35,7 +35,7 @@ class UserController {
              
             }
             catch(err){
-                return next(err);
+                return res.json(err);
             } 
         }
     }
@@ -56,7 +56,7 @@ class UserController {
             res.json({success: false, msg: 'Il manque l id du user'});
         }else{
             try{
-                let sensors = await Sensor.find({userId: req.body.userId}).count().lean().exec();
+                let sensors = await Sensor.find({userID: req.body.userId}).countDocuments().lean().exec();
                 return res.json({nb_sensors: sensors})
             }
             catch(err){
