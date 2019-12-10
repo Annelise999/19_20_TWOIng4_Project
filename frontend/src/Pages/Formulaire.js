@@ -70,11 +70,7 @@ return (
 </Col>
 
 
-<Col  sm=  "12" md="6" lg="4" >
 
-<Galerieform></Galerieform>
-
-</Col>
 
 <Col  sm=  "12" md="6" lg="4">
 
